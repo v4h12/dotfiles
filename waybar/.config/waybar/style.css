@@ -1,0 +1,196 @@
+/* Waybar Style - Dark Theme */
+/* Global Style */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
+  font-size: 11px;
+  min-height: 0;
+  color: #e5e5e0; /* bone white as default */
+}
+
+/* Main Window - Top-Sticking, Transparent with subtle border */
+window#waybar {
+  /* background: linear-gradient(to bottom, rgba(8, 8, 8, 0.95), rgba(8, 8, 8, 0.8)); */
+  background: rgba(0, 0, 0, 0.98);
+  padding: 0 4px;
+  margin: 0;
+  border: 1px solid rgba(59, 59, 59, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Right side separators - add right border to specific modules */
+/* #custom-weather, */
+/* #idle_inhibitor, */
+/* #custom-redshift { */
+/*     border-right: 1px solid #808080; */
+/*     margin-right: 8px; */
+/*     padding-right: 8px; */
+/* } */
+
+#custom-special-workspace {
+    padding: 0 5px;
+    margin: 0;
+    margin-left: -8px;
+    color: rgba(160, 160, 160, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+    padding: 0 5px;
+    color: rgba(160, 160, 160, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left */
+#custom-launcher, #workspaces {
+  /* background: linear-gradient(to bottom, rgba(25, 25, 25, 0.8), rgba(15, 15, 15, 0.8)); */
+  background: transparent;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  /* border: 1px solid rgba(160, 160, 160, 0.1); */
+  /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); */
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right */
+#right-modules {
+  background: linear-gradient(to bottom, rgba(25, 25, 25, 0.8), rgba(15, 15, 15, 0.8));
+  padding: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border: 1px solid rgba(160, 160, 160, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+/* Hover Effect - Achieved by changing box-shadow and margin */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+  background: linear-gradient(to bottom, rgba(35, 35, 35, 0.85), rgba(25, 25, 25, 0.85));
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 3px;
+}
+
+/* Workspaces - Active button stands out more */
+#workspaces button {
+  background: transparent;
+  color: rgba(160, 160, 160, 0.8);
+  font-weight: normal;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+  /* background: rgba(30, 30, 30, 0.8); */
+  background: none;
+  /* border: 1px solid rgba(160, 160, 160, 0.3); */
+  border: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+}
+
+/* Module States - Added glow effect to critical states */
+/* #cpu.warning, #memory.warning, #battery.warning { */
+/*   color: #e5e5e0; */
+/* } */
+/*  */
+/* #cpu.critical, #memory.critical, #battery.critical:not(.charging) { */
+/*   color: #ffffff; */
+/*   background: linear-gradient(to bottom, rgba(50, 30, 30, 0.95), rgba(40, 20, 20, 0.95)); */
+/*   box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);  */
+/*  */
+/* #battery.charging { */
+/*   color: #e5e5e0; */
+/* } */
+/*  */
+/* #wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off { */
+/*   color: #606060; */
+/*   font-style: italic; */
+/* } */
+/*  */
+/* #idle_inhibitor.activated { */
+/*   color: #e5e5e0; */
+/* } */
+
+/* Module States - Text emphasis only */
+#cpu.warning, #memory.warning, #battery.warning {
+  color: #ffdd88;
+  text-shadow: 0 0 5px rgba(255, 221, 136, 0.5);
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  color: #ff8888;
+  background: transparent;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+#battery.charging {
+  color: #88ff88;
+  text-shadow: 0 0 5px rgba(136, 255, 136, 0.5);
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #808080;
+  font-style: italic;
+}
+
+#idle_inhibitor.activated {
+  color: #88ddff;
+  text-shadow: 0 0 5px rgba(136, 221, 255, 0.5);
+}
+
+/* Tooltip - Refined borders and shadows */
+tooltip {
+  background: rgba(5, 5, 5, 0.98);
+  border: 1px solid rgba(160, 160, 160, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: #e5e5e0;
+  padding: 5px 8px;
+}
+
+/* Calendar Tooltip */
+calendar.months {
+  color: #d5c4a1;
+}
+
+calendar.days {
+  color: #a89984;
+}
+
+calendar.weeks {
+  color: #d5c4a1;
+}
+
+calendar.weekdays {
+  color: #d5c4a1;
+}
+
+calendar.today {
+  color: #ebdbb2;
+  text-shadow: 0 0 5px rgba(235, 219, 178, 0.5);
+}

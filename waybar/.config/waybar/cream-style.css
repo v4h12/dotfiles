@@ -1,0 +1,147 @@
+/* Waybar Style - Cream Theme */
+/* Global Styles */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
+    font-size: 11px;
+    min-height: 0;
+    color: #3D271D; /* Dark brown text */
+}
+
+/* Main Window */
+window#waybar {
+    background: #C8B08A; /* Classical cream background */
+    padding: 0 4px;
+    margin: 8px;
+    border: 1px solid #3D271D; /* Darker cream/tan border */
+    box-shadow: none;
+}
+
+/* Custom Special Workspace */
+#custom-special-workspace {
+    padding: 0 5px;
+    margin: 0;
+    margin-left: -8px;
+    color: #7E6252; /* Muted dark brown text */
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+    padding: 0 5px;
+    color: #9E8070; /* Lighter dark brown text */
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left */
+#custom-launcher, #workspaces {
+    background: transparent;
+    padding: 4px 8px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right */
+#right-modules {
+    background: transparent;
+    padding: 4px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    border: 1px solid #E0CCA0; /* Darker cream/tan border */
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+/* Hover Effect */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+    background: rgba(224, 204, 160, 0.3); /* Transparent darker cream/tan */
+    margin-bottom: 3px;
+}
+
+/* Workspaces - Active button stands out */
+#workspaces button {
+    background: transparent;
+    color: #7E6252; /* Muted dark brown text */
+    font-weight: normal;
+    padding: 0 4px;
+    margin: 0 1px;
+}
+
+#workspaces button.active {
+    /* color: #3D271D;  */
+    color: #FFFAAA;
+    /* background: #C8B08A; */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: #AF9376; /* Even lighter brown/hover background */
+}
+
+/* Window */
+#window {
+    color: #4B3227; /* Darker brown window text */
+    padding: 0 8px;
+}
+
+/* Module States - Text emphasis only */
+#cpu.warning, #memory.warning, #battery.warning {
+  color: #ffdd88;
+  text-shadow: 0 0 5px rgba(255, 221, 136, 0.5);
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  color: #ff8888;
+  background: transparent;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+#battery.charging {
+  color: #88ff88;
+  text-shadow: 0 0 5px rgba(136, 255, 136, 0.5);
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #808080;
+  font-style: italic;
+}
+
+/* Tooltip */
+tooltip {
+    background: #C8B08A; /* Lighter cream tooltip background */
+    border: 1px solid #3D271D; /* Darker cream tooltip border */
+    box-shadow: none;
+    color: #3D271D; /* Dark brown text */
+    padding: 5px 8px;
+}
+
+tooltip label {
+    color: #3D271D; /* Dark brown text */
+}

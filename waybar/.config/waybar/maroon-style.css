@@ -1,0 +1,145 @@
+/* Waybar Style - Dark Red & Cream Theme */
+/* Global Styles */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
+    font-size: 11px;
+    min-height: 0;
+    color: #f5e6d3;
+}
+
+/* Main Window */
+window#waybar {
+    background: #3d1a1a;
+    padding: 0 4px;
+    margin: 8px;
+    border: 1px solid #8b6f47;
+    box-shadow: none;
+}
+
+/* Custom Special Workspace */
+#custom-special-workspace {
+    padding: 0 5px;
+    margin: 0;
+    margin-left: -8px;
+    color: #9b7755;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+    padding: 0 5px;
+    color: #d5b895;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left */
+#custom-launcher, #workspaces {
+    background: transparent;
+    padding: 4px 8px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right */
+#right-modules {
+    background: transparent;
+    padding: 4px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    border: 1px solid #8b6f47;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+/* Hover Effect */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+    background: rgba(139, 111, 71, 0.15);
+    margin-bottom: 3px;
+}
+
+/* Workspaces - Active button stands out */
+#workspaces button {
+    background: transparent;
+    color: #9b7755;
+    font-weight: normal;
+    padding: 0 4px;
+    margin: 0 1px;
+}
+
+#workspaces button.active {
+    color: #f5e6d3;
+    background: #5d2a2a;
+    border: 1px solid #8b6f47;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: #4d2222;
+}
+
+/* Window */
+#window {
+    color: #c5a885;
+    padding: 0 8px;
+}
+
+/* Module States - Text emphasis only */
+#cpu.warning, #memory.warning, #battery.warning {
+  color: #ffdd88;
+  text-shadow: 0 0 5px rgba(255, 221, 136, 0.5);
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  color: #ff8888;
+  background: transparent;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+#battery.charging {
+  color: #88ff88;
+  text-shadow: 0 0 5px rgba(136, 255, 136, 0.5);
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #808080;
+  font-style: italic;
+}
+
+/* Tooltip */
+tooltip {
+    background: #2d1212;
+    border: 1px solid #6d4f37;
+    box-shadow: none;
+    color: #f5e6d3;
+    padding: 5px 8px;
+}
+
+tooltip label {
+    color: #f5e6d3;
+}

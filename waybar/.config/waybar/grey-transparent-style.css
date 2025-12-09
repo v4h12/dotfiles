@@ -1,0 +1,142 @@
+/* Waybar Style - Fully Transparent (Dark Grey Text) */
+/* Global Style */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
+  font-size: 11px;
+  min-height: 0;
+  /* color: rgba(89, 89, 89, 0.66);  */
+  color: rgba(119, 119, 119, 0.66);
+}
+
+/* Main Window - Fully Transparent */
+window#waybar {
+  background: transparent;
+  padding: 0 4px;
+  margin: 0;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+#custom-special-workspace {
+    padding: 0 5px;
+    margin: 0;
+    margin-left: -8px;
+    color: rgba(89, 89, 89, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+    padding: 0 5px;
+    color: rgba(89, 89, 89, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left (Transparent) */
+#custom-launcher, #workspaces {
+  background: transparent;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right (Transparent) */
+#right-modules {
+  background: transparent;
+  padding: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+/* Hover Effect - Subtle dark text glow */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+  background: transparent;
+  text-shadow: 0 0 5px rgba(89, 89, 89, 0.4);
+  margin-bottom: 3px;
+}
+
+/* Workspaces - Active button with subtle dark glow */
+#workspaces button {
+  background: transparent;
+  color: rgba(89, 89, 89, 0.8);
+  font-weight: normal;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#workspaces button.active {
+  color: #333333; /* Darker grey for active button text */
+  background: transparent;
+  border: none;
+  text-shadow: 0 0 8px rgba(89, 89, 89, 0.5);
+  font-weight: bold;
+}
+
+/* Module States - Text emphasis only */
+#cpu.warning, #memory.warning, #battery.warning {
+  color: #E5A700;
+  text-shadow: 0 0 5px rgba(229, 167, 0, 0.3);
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  color: #C70000;
+  background: transparent;
+  text-shadow: 0 0 8px rgba(199, 0, 0, 0.5);
+}
+
+#battery.charging {
+  color: #008B00;
+  text-shadow: 0 0 5px rgba(0, 139, 0, 0.4);
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #909090;
+  font-style: italic;
+}
+
+#idle_inhibitor.activated {
+  color: #0077A3;
+  text-shadow: 0 0 5px rgba(0, 119, 163, 0.4);
+}
+
+/* Tooltip - Semi-transparent for readability */
+tooltip label {
+  color: #ffffff; /* White text for tooltip for readability */
+}
+tooltip {
+  /* font-weight: bold; */
+  /* background: rgba(89, 89, 89, 0.66); */
+  background: rgba(49, 49, 49, 0.66);
+  border: 1px solid rgba(89, 89, 89, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 5px 8px;
+}

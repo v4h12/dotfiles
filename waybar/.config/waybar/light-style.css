@@ -1,0 +1,157 @@
+/* Global Style - Light Theme */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
+  font-size: 11px;
+  min-height: 0;
+  color: #2a2a2a; /* dark gray as default text */
+}
+
+/* Main Window - Top-Sticking, Light with subtle border */
+window#waybar {
+  background: linear-gradient(to bottom, rgba(245, 245, 245, 0.95), rgba(235, 235, 235, 0.9));
+  padding: 0 4px;
+  margin: 0;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#custom-special-workspace {
+    padding: 0 5px;
+    margin: 0;
+    margin-left: -8px;
+    color: rgba(80, 80, 80, 0.7);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+    padding: 0 5px;
+    color: rgba(80, 80, 80, 0.7);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left */
+#custom-launcher, #workspaces {
+  /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(248, 248, 248, 0.85)); */
+  background: transparent;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  /* border: 1px solid rgba(100, 100, 100, 0.2); */
+  /* box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1); */
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right */
+#right-modules {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(248, 248, 248, 0.85));
+  padding: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+/* Hover Effect */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.95), rgba(230, 230, 230, 0.9));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 3px;
+}
+
+/* Workspaces - Active button stands out */
+#workspaces button {
+  background: transparent;
+  color: rgba(80, 80, 80, 0.7);
+  font-weight: normal;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#workspaces button.active {
+  color: #1a1a1a;
+  background: rgba(220, 220, 220, 0.8);
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+
+/* Module States - Warning colors for light theme */
+#cpu.warning, #memory.warning, #battery.warning {
+  color: #d97706; /* amber/orange for warnings */
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  color: #dc2626; /* red for critical */
+  background: linear-gradient(to bottom, rgba(254, 226, 226, 0.95), rgba(252, 211, 211, 0.95));
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.3); /* Subtle red glow */
+}
+
+#battery.charging {
+  color: #059669; /* green for charging */
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #9ca3af; /* light gray for disabled */
+  font-style: italic;
+}
+
+#idle_inhibitor.activated {
+  color: #2563eb; /* blue when activated */
+}
+
+/* Tooltip - Light theme */
+tooltip {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  color: #2a2a2a;
+  padding: 5px 8px;
+}
+
+/* Calendar Tooltip */
+calendar.months {
+  color: #333333;
+}
+
+calendar.days {
+  color: #555555;
+}
+
+calendar.weeks {
+  color: #333333;
+}
+
+calendar.weekdays {
+  color: #333333;
+}
+
+calendar.today {
+  color: #000000;
+  font-weight: bold;
+}

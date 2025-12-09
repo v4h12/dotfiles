@@ -1,0 +1,173 @@
+/* Global Style */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
+  font-size: 11px;
+  min-height: 0;
+  color: #d4a574; /* warm copper/bronze as default */
+}
+
+/* Main Window - Dark with warm copper accent */
+window#waybar {
+  /* background: linear-gradient(to bottom, rgba(100, 100, 100, 0.95), rgba(130, 130, 130, 0.85)); */
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.50), rgba(161, 143, 94, 0.85)); */
+  background: linear-gradient(to top, rgba(100, 100, 100, 0), rgba(0, 0, 0, 0.25));
+  padding: 0 4px;
+  margin: 0;
+  /* border-bottom: 1px solid rgba(180, 120, 70, 0.3); */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#custom-special-workspace {
+    padding: 0 5px;
+    margin: 0;
+    margin-left: -8px;
+    color: rgba(180, 130, 80, 0.7);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+    padding: 0 5px;
+    color: rgba(180, 130, 80, 0.7);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left */
+#custom-launcher, #workspaces {
+  background: transparent;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right */
+#right-modules {
+  background: linear-gradient(to bottom, rgba(35, 25, 18, 0.8), rgba(25, 18, 12, 0.8));
+  padding: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border: 1px solid rgba(180, 120, 70, 0.2);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(180, 100, 50, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+  font-weight: bold;
+  color: #d4a574;
+}
+
+/* Hover Effect - Warm copper glow */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+  background: linear-gradient(to bottom, rgba(100, 100, 100, 0.95), rgba(130, 130, 130, 0.85));
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(180, 100, 50, 0.4);
+  margin-bottom: 3px;
+}
+
+/* Workspaces - Circuit board inspired */
+#workspaces button {
+  background: transparent;
+  color: rgba(180, 130, 80, 0.7);
+  font-weight: normal;
+  padding: 0 4px;
+  margin: 0 1px;
+  transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+  color: #f5d9a8;
+  /* background: rgba(60, 40, 25, 0.8); */
+  background: transparent;
+  /* border: 1px solid rgba(200, 140, 80, 0.5); */
+  border: none;
+  /* box-shadow: 0 0 8px rgba(220, 150, 80, 0.3); */
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  color: #e8c89a;
+  background: rgba(50, 35, 22, 0.6);
+}
+
+/* Module States - Copper/Bronze theme */
+#cpu.warning, #memory.warning, #battery.warning {
+  color: #ffcc77;
+  text-shadow: 0 0 5px rgba(255, 180, 100, 0.6);
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  color: #ff9966;
+  background: transparent;
+  text-shadow: 0 0 8px rgba(255, 120, 60, 0.8);
+}
+
+#battery.charging {
+  color: #99dd88;
+  text-shadow: 0 0 5px rgba(120, 200, 100, 0.5);
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #6b5844;
+  font-style: italic;
+}
+
+#idle_inhibitor.activated {
+  color: #88ccff;
+  text-shadow: 0 0 5px rgba(136, 200, 255, 0.5);
+}
+
+/* Tooltip - Vintage circuit aesthetic */
+tooltip {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.40), rgba(161, 143, 94, 0.50));
+  /* border: 1px solid rgba(180, 120, 70, 0.4); */
+  border: none;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(180, 100, 50, 0.15); */
+  box-shadow: none;
+  color: #d4a574;
+  padding: 5px 8px;
+}
+
+/* Calendar Tooltip - Warm tones */
+calendar.months {
+  color: #e8c89a;
+}
+
+calendar.days {
+  color: #c9a67a;
+}
+
+calendar.weeks {
+  color: #e8c89a;
+}
+
+calendar.weekdays {
+  color: #e8c89a;
+}
+
+calendar.today {
+  /* color: #f5d9a8; */
+  color: #ffffff;
+  /* text-shadow: 0 0 5px rgba(245, 217, 168, 1.0); */
+  text-shadow: 0 0 5px rgba(100, 100, 100, 1.0);
+  font-weight: bold;
+}
