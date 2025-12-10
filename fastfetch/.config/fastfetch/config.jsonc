@@ -1,0 +1,132 @@
+{
+    "logo": {
+        "type": "file",
+        "source": "~/Pictures/ascii-art/Venus-ascii.txt",
+        "height": 11,
+        "width": 11,
+        "padding": {
+            "top": 2,
+            "left": 3,
+            "right": 1
+        },
+        "color": {
+            "1": "90"
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m[==================== HARDWARE ====================]"
+        },
+        {
+            "type": "host",
+            "key": " >  SYS//",
+            "keyColor": "white"
+        },
+        {
+            "type": "cpu",
+            "key": " >  CPU//",
+            "keyColor": "white"
+        },
+        {
+            "type": "gpu",
+            "key": " >  GPU//",
+            "keyColor": "white"
+        },
+        {
+            "type": "memory",
+            "key": " >  MEM//",
+            "keyColor": "white"
+        },
+        {
+            "type": "disk",
+            "key": " >  DSK//",
+            "keyColor": "white"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m[==================================================]"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m[==================== SOFTWARE ====================]"
+        },
+        {
+            "type": "os",
+            "key": " >  OS_//",
+            "keyColor": "white"
+        },
+        {
+            "type": "kernel",
+            "key": " >  KRN//",
+            "keyColor": "white"
+        },
+        {
+            "type": "packages",
+            "key": " >  PKG//",
+            "keyColor": "white"
+        },
+        {
+            "type": "shell",
+            "key": " >  SHL//",
+            "keyColor": "white"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " >  DE_//",
+            "keyColor": "white"
+        },
+        {
+            "type": "lm",
+            "key": " >  LM_//",
+            "keyColor": "white"
+        },
+        {
+            "type": "wm",
+            "key": " >  WM_//",
+            "keyColor": "white"
+        },
+        {
+            "type": "wmtheme",
+            "key": " >  THM//",
+            "keyColor": "white"
+        },
+        {
+            "type": "terminal",
+            "key": " >  TTY//",
+            "keyColor": "white"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m[=================================================]"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m[================ RUNTIME_METRICS ================]"
+        },
+        {
+            "type": "command",
+            "key": " >  AGE//",
+            "keyColor": "white",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": " >  UP_//",
+            "keyColor": "white"
+        },
+        {
+            "type": "datetime",
+            "key": " >  DT_//",
+            "keyColor": "white"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[90m[=================================================]"
+        }
+    ]
+}

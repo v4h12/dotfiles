@@ -1,0 +1,84 @@
+# Remove all UI elements to minimize chrome
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+
+# Hide statusbar by default (toggle with 's')
+set statusbar-basename true
+map <F1> toggle_statusbar
+
+# Dark theme to blend better with dark terminals/WMs
+set default-bg "#1e1e1e"
+set default-fg "#f8f8f2"
+
+# Make the status bar minimal when shown
+set statusbar-bg "#1e1e1e"
+set statusbar-fg "#f8f8f2"
+
+# Completion colors (when you press Tab)
+set completion-bg "#1e1e1e"
+set completion-fg "#f8f8f2"
+set completion-highlight-bg "#44475a"
+set completion-highlight-fg "#f8f8f2"
+
+# Input bar colors
+set inputbar-bg "#1e1e1e"
+set inputbar-fg "#f8f8f2"
+
+# Notification colors
+set notification-bg "#1e1e1e"
+set notification-fg "#f8f8f2"
+set notification-error-bg "#ff5555"
+set notification-error-fg "#f8f8f2"
+set notification-warning-bg "#ffb86c"
+set notification-warning-fg "#1e1e1e"
+
+# Index/bookmark colors
+set index-bg "#1e1e1e"
+set index-fg "#f8f8f2"
+set index-active-bg "#44475a"
+set index-active-fg "#f8f8f2"
+
+# Search highlighting
+# set highlight-color "#eeeeee"
+# set highlight-active-color "#dddddd"
+
+# Recolor pages for dark theme (optional - uncomment if you want)
+set recolor true
+# set recolor-lightcolor "#1e1e1e"  
+# set recolor-lightcolor "#D4C8AE"  
+set recolor-darkcolor "#f8f8f2" 
+set recolor-keephue true          # This is key - preserves color hues
+set recolor-reverse-video false
+
+# Auto-adjust to window
+set adjust-open "best-fit"
+set scroll-page-aware true
+
+# Smooth scrolling
+set scroll-step 50
+set zoom-min 10
+set zoom-max 1000
+set zoom-step 10
+
+# Copy to clipboard
+set selection-clipboard clipboard
+
+# Additional keybinds for convenience
+map <C-i> zoom in
+map <C-o> zoom out
+map <C-r> reload
+map <C-q> quit
+map b toggle_statusbar
+map <F11> toggle_fullscreen
+map <C-d> recolor
+
+# Page navigation improvements  
+map <C-j> scroll down
+map <C-k> scroll up
+map <C-h> scroll left
+map <C-l> scroll right
+
+# Colors (dark theme example)
+set default-bg "#1e1e1e"
+set default-fg "#f8f8f2"
