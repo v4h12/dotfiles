@@ -1,0 +1,8 @@
+[manager]
+theme = "flexoki-dark"
+opener = "edit"
+
+[opener]
+edit = [
+  { run = "nvim \"$@\"", block = true, desc = "Edit with NeoVim" }
+]
