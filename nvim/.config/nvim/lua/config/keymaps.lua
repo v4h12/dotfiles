@@ -3,4 +3,4 @@
 -- Add any additional keymaps here
 
 -- Keymap to compile/run the current file
-vim.keymap.set("n", "<leader>rc", "<cmd>Compiler<cr>", { desc = "Run Compiler" })
+-- vim.keymap.set("n", "<leader>rc", "<cmd>Compiler<cr>", { desc = "Run Compiler" })
