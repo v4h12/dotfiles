@@ -196,7 +196,7 @@
       "󰁹"
     ],
     "tooltip-format": "{capacity}% • {timeTo} • {power}W",
-    "on-click": "gnome-power-statistics"
+    "on-click": "org.gnome.PowerStats"
   },
   "wireplumber": {
     "format": "{icon} {volume}%",
