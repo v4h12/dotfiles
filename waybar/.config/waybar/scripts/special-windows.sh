@@ -33,7 +33,7 @@ while IFS= read -r class; do
   [ -z "$class" ] && continue
   icon=$(get_icon "$class")
   icons="$icons $icon"
-  tooltip="$tooltip$class\n"
+  tooltip="$tooltip$class"
 done <<<"$windows"
 
 # Format output

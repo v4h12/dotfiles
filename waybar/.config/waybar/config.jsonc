@@ -133,9 +133,9 @@
   },
   "custom/bin": {
     "format": " ",
-    "on-click": "kitty -e trasher",
+    "on-click": "kitty -e bash -c 'trasher; sleep 2'",
     "tooltip": true,
-    "tooltip-format": "Open Trasher"
+    "tooltip-format": "Use Trasher :)"
   },
   "custom/weather": {
     "format": "󰔏",

@@ -18,6 +18,12 @@ alias bl='blesh-load'
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
 
+#git aliases
+alias gis="git status"
+alias gia="git add"
+alias gic="git commit -m"
+alias gip="git push"
+
 # zellij quickbinds
 alias za="zellij attach"              # attachs most recent session
 alias zls="zellij ls"                 # lists all sessions
