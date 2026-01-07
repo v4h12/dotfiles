@@ -37,5 +37,7 @@ return {
         end
       end, { "i", "s" }),
     })
+
+    return opts
   end,
 }

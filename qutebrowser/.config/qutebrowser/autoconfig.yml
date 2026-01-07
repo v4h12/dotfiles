@@ -37,6 +37,7 @@ settings:
   colors.webpage.preferred_color_scheme:
     global: dark
   content.javascript.clipboard:
+    https://chatgpt.com: access-paste
     https://github.com: access-paste
   statusbar.show:
     global: always

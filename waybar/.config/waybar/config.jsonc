@@ -15,7 +15,8 @@
   ],
   "modules-center": [
     "clock#time",
-    "clock#date"
+    "clock#date",
+    "custom/bin"
   ],
   "modules-right": [
     "custom/weather",
@@ -129,6 +130,12 @@
         "today": "<b>{}</b>"
       }
     }
+  },
+  "custom/bin": {
+    "format": " ",
+    "on-click": "kitty -e trasher",
+    "tooltip": true,
+    "tooltip-format": "Open Trasher"
   },
   "custom/weather": {
     "format": "󰔏",

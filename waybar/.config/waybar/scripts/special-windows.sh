@@ -10,9 +10,10 @@ windows=$(hyprctl clients -j | jq -r '
 # Map common application classes to icons (nerd fonts)
 get_icon() {
   case "$1" in
-  foot | kitty | alacritty | wezterm) echo "󰆍" ;;                     # Terminal
-  firefox | Firefox) echo "󰈹" ;;                                      # Firefox
-  chromium | chrome | brave) echo "" ;;                               # Chrome/Chromium
+  foot | kitty | alacritty) echo "󰆍" ;;  # Terminal
+  firefox | Firefox) echo "󰈹" ;;         # Firefox
+  chromium | chrome | brave) echo "󰊯" ;; # Chrome/Chromium
+  qutebrowser | Qutebrowser | org.qutebrowser.qutebrowser) echo " " ;;
   zathura | Zathura | org.pwmt.zathura | okular | evince) echo "" ;; # PDF viewer
   thunar | nautilus | dolphin | pcmanfm) echo "" ;;                   # File manager
   discord | Discord) echo "󰙯" ;;                                      # Discord
@@ -20,6 +21,7 @@ get_icon() {
   obsidian | Obsidian) echo "󱞁" ;;                                    # Obsidian
   artha | Artha) echo "󰘝" ;;
   sqlite | sqlitebrowser) echo "" ;;
+  steam | Steam) echo "󰓓" ;;
   *) echo "" ;; # Default window icon
   esac
 }

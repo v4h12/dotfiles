@@ -66,10 +66,10 @@ return {
       })
     end
 
-    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#C0A36E" })
-    vim.api.nvim_set_hl(0, "DashboardDesc", { fg = "#C0A36E" }) -- crystalBlue
-    vim.api.nvim_set_hl(0, "DashboardKey", { fg = "#C34043" }) -- roninYellow
-    vim.api.nvim_set_hl(0, "DashboardIcon", { fg = "#C34043" }) -- springGreen
+    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#C34043" })
+    vim.api.nvim_set_hl(0, "DashboardDesc", { fg = "#C0A36E" })
+    vim.api.nvim_set_hl(0, "DashboardKey", { fg = "#C34043" })
+    vim.api.nvim_set_hl(0, "DashboardIcon", { fg = "#C34043" })
 
     return opts
   end,

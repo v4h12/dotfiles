@@ -8,7 +8,6 @@
 #PS1='[\u@\h \W]\$ ' #user>host>Workingdir>$user#root
 # PS1='%n@%m %~\n$ '
 PS1='\[\e[97m\]\u@\h \w\n\$ \[\e[0m\]'
-#alias ls='ls -l --color=auto'
 alias ls='eza -l --color=always --group-directories-first --hyperlink'
 alias la='eza --color=always -T --hyperlink'
 alias grep='grep --color=auto'
@@ -38,7 +37,6 @@ svc() {
 
 # aur and yay detailed search
 alias parup="paru -Slq | fzf --multi --preview 'paru -Sii {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -S"
-
 # file search into micro editor
 alias fzff='nvim "$(find . -type f | fzf --preview "cat {}")"'
 
@@ -49,6 +47,7 @@ export PATH=/usr/local/bin:$PATH
 export EDITOR=/usr/bin/nvim
 
 # ---------- For looks ---------- #
+PROMPT_COMMAND='if [ -z "$FIRST_PROMPT" ]; then FIRST_PROMPT=1; else echo; fi'
 if [ -z "$ZELLIJ" ]; then
   eval "$(starship init bash)"
 else
@@ -63,6 +62,8 @@ fi
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 # source /usr/share/nvm/init-nvm.sh
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # Attach ble.sh and to use is '>'(right-arrow)
 blesh-load() {

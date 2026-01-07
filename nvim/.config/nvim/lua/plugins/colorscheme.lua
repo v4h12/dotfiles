@@ -1,7 +1,6 @@
 return {
   {
     "rebelot/kanagawa.nvim",
-    enabled = true, --change to true/false
     lazy = false,
     priority = 1000,
     config = function()
@@ -13,10 +12,10 @@ return {
         keywordStyle = { italic = true },
         statementStyle = { bold = true },
         typeStyle = {},
-        transparent = true, -- set bg colorscheme
+        transparent = true,
         dimInactive = false,
         terminalColors = true,
-        colors = { -- add/modify theme and palette colors
+        colors = {
           palette = {},
           theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
         },
@@ -24,7 +23,8 @@ return {
           return {
             LineNr = { bg = "none" },
             SignColumn = { bg = "none" },
-            -- IndentBlanklineChar = { fg = "#444444" },
+            CursorLine = { bg = "none" },
+            CursorLineNr = { bg = "none" },
           }
         end,
         theme = "dragon",
@@ -33,43 +33,105 @@ return {
           light = "lotus",
         },
       })
+      -- ######################################### set default here ###########################################
+      -- Set this as default colorscheme
       vim.cmd("colorscheme kanagawa")
     end,
   },
   {
     "kepano/flexoki-neovim",
-    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       require("flexoki").setup({
-        compile = false,
-        undercurl = true,
-        commentStyle = { italic = true },
-        functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = true, -- do not set background color
-        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-        terminalColors = true, -- define vim.g.terminal_color_
-        colors = { -- add/modify theme and palette colors
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-        },
-        overrides = function(colors) -- add/modify highlights
+        transparent = true,
+        overrides = function(colors)
           return {
+            Normal = { bg = "none" },
+            NormalNC = { bg = "none" },
+            NormalFloat = { bg = "none" },
             LineNr = { bg = "none" },
             SignColumn = { bg = "none" },
+            CursorLine = { bg = "none" },
+            CursorLineNr = { bg = "none" },
+            StatusLine = { bg = "none" },
+            StatusLineNC = { bg = "none" },
+            VertSplit = { bg = "none" },
+            WinSeparator = { bg = "none" },
           }
         end,
-        theme = "dragon", -- Load "dragon" theme
-        background = { -- map the value of 'background' option to a theme
-          dark = "flexoki-dark", -- try "dragon" !
-          light = "flexoki-light",
+      })
+    end,
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({
+        transparent_mode = true,
+        overrides = {
+          LineNr = { bg = "none" },
+          SignColumn = { bg = "none" },
+          CursorLine = { bg = "#191919" },
+          CursorLineNr = { bg = "none" }, -- Statusline transparency
+          StatusLine = { bg = "none" },
+          StatusLineNC = { bg = "none" },
+          VertSplit = { bg = "none" },
+          WinSeparator = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          Pmenu = { bg = "none" },
+          PmenuSel = { bg = "#191919" }, -- Keep selection visible
+          NeoTreeNormal = { bg = "none" },
+          NeoTreeNormalNC = { bg = "none" },
+          NvimTreeNormal = { bg = "none" },
+          TelescopeNormal = { bg = "none" },
+          TelescopeBorder = { bg = "none" },
+          TelescopeSelection = { bg = "#191919" },
         },
       })
-      vim.cmd("colorscheme flexoki-dark")
+    end,
+  },
+  {
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("onedark").setup({
+        style = "dark", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer'
+        transparent = true,
+        code_style = {
+          comments = "italic",
+          keywords = "italic",
+          functions = "none",
+          strings = "none",
+          variables = "none",
+        },
+        colors = {},
+        highlights = {
+          LineNr = { bg = "none" },
+          SignColumn = { bg = "none" },
+          CursorLine = { bg = "none" },
+          CursorLineNr = { bg = "none" },
+        },
+      })
+    end,
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("rose-pine").setup({
+        variant = "main", -- 'main', 'moon', or 'dawn'
+        dark_variant = "main",
+        disable_background = true, -- this is their version of transparent
+        styles = {
+          italic = true,
+          transparency = true,
+        },
+      })
     end,
   },
 }
