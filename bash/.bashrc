@@ -11,7 +11,7 @@ PS1='\[\e[97m\]\u@\h \w\n\$ \[\e[0m\]'
 alias ls='eza -l --color=always --group-directories-first --hyperlink'
 alias la='eza --color=always -T --hyperlink'
 alias grep='grep --color=auto'
-alias ff="fastfetch"
+alias neofetch="fastfetch"
 alias matrix="unimatrix -n -s 96 -l 'o'"
 alias print='lp -d Canon_TS5100_series'
 alias bl='blesh-load'
