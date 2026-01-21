@@ -42,5 +42,7 @@ settings:
     https://github.com: access-paste
   statusbar.show:
     global: always
+  tabs.position:
+    global: top
   tabs.show:
     global: multiple

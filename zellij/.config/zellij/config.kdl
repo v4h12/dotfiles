@@ -260,7 +260,8 @@ plugins {
     }
     plugin-manager location="zellij:plugin-manager"
     session-manager location="zellij:session-manager"
-    status-bar location="zellij:status-bar"
+    // status-bar location="zellij:status-bar"
+    statusbar location="file:/home/v4h/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/statusbar.wasm"
     strider location="zellij:strider"
     tab-bar location="zellij:tab-bar"
     welcome-screen location="zellij:session-manager" {
@@ -300,6 +301,7 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
+// retro-wave | blade_runner | nord | ao | ansi | vesper | kanagawa | nord | gruvbox | atelier-sulphurpool | cyber-noir
 theme "kanagawa"
  
 // Choose the base input mode of zellij.

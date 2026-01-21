@@ -17,7 +17,7 @@ if [ -n "$chosen" ]; then
   "Default")
     STYLE="style.css"
     ROFI_STYLE="default"
-    SWAYNC_STYLE="style.css"
+    SWAYNC_STYLE="dark-style.css"
     ;;
   "Light")
     STYLE="light-style.css"
