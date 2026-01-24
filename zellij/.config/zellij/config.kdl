@@ -302,7 +302,7 @@ web_client {
 // Default: default
 // 
 // retro-wave | blade_runner | nord | ao | ansi | vesper | kanagawa | nord | gruvbox | atelier-sulphurpool | cyber-noir
-theme "kanagawa"
+theme "ansi"
  
 // Choose the base input mode of zellij.
 // Default: normal

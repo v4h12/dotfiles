@@ -6,7 +6,7 @@ ROFI_COLORS_DIR="$HOME/.config/rofi/waybar_colors"
 ROFI_COLORS_FILE="$HOME/.config/rofi/colors.rasi"
 SWAYNC_CONFIG_DIR="$HOME/.config/swaync"
 
-options="Default\nLight\nNavy\nMaroon\nCream\nTransparent\nDark-Transparent\nGrey-Transparent\nCirc\nKanagawa"
+options="Default\nLight\nNavy\nMaroon\nCream\nTransparent\nDark-Transparent\nGrey-Transparent\nCirc\nKanagawa\nRamude"
 chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Waybar Theme" -theme ~/.config/rofi/launchers/type-1/style-10.rasi)
 
 if [ -n "$chosen" ]; then
@@ -59,6 +59,12 @@ if [ -n "$chosen" ]; then
     ROFI_STYLE="circ"
     SWAYNC_STYLE="circ-style.css"
     ;;
+  "Ramude")
+    STYLE="ramude-style.css"
+    ROFI_STYLE="ramude"
+    SWAYNC_STYLE="ramude-style.css"
+    ;;
+
   "Kanagawa")
     STYLE="kanagawa-style.css"
     ROFI_STYLE="kanagawa"
