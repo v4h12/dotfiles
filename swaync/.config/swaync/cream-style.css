@@ -1,0 +1,241 @@
+/* Cream theme for SwayNC, based on cream.rasi */
+:root {
+  --kanagawa-bg: #C8B08A;
+  --kanagawa-bg-alt: #C8B08A;
+  --kanagawa-bg-hover: #C8B08A;
+  --kanagawa-bg-darker: #FFF8E1;
+  --kanagawa-text-primary: #3D271D;
+  --kanagawa-text-secondary: #7E6252;
+  --kanagawa-text-disabled: #3D271D;
+  --kanagawa-accent: #3D271D;
+  --kanagawa-accent-alt: #ffdd88;
+  --kanagawa-accent-active: #ff8888;
+  --kanagawa-border: #3D271D;
+}
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 10pt;
+}
+
+/* Control Center */
+.control-center {
+  background: var(--kanagawa-bg);
+  /* border: 2px solid var(--kanagawa-border); */
+  border-top: none;
+  margin: 0;
+  padding: 8px;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.widget-title {
+  color: var(--kanagawa-text-primary);
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  padding: 8px;
+  background: var(--kanagawa-bg-alt);
+  border: 1px solid var(--kanagawa-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.widget-title > button {
+  color: var(--kanagawa-text-primary);
+  background: var(--kanagawa-bg-hover);
+  padding: 4px 8px;
+}
+
+.widget-title > button:hover {
+  background: var(--kanagawa-accent);
+}
+
+/* DND Widget */
+.widget-dnd {
+  background: var(--kanagawa-bg-alt);
+  border: 1px solid var(--kanagawa-border);
+  margin: 0 0 8px 0;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.widget-dnd > label {
+  color: var(--kanagawa-text-primary);
+}
+
+.widget-dnd > switch {
+  background: var(--kanagawa-bg-darker);
+  border: 1px solid var(--kanagawa-border);
+  min-width: 40px;
+  min-height: 20px;
+}
+
+.widget-dnd > switch:checked {
+  background: var(--kanagawa-accent-alt);
+}
+
+.widget-dnd > switch slider {
+  background: var(--kanagawa-text-primary);
+}
+
+/* Inhibitors Widget */
+.widget-inhibitors {
+  background: var(--kanagawa-bg-alt);
+  border: 1px solid var(--kanagawa-border);
+  margin: 0 0 8px 0;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.widget-inhibitors > button {
+  color: var(--kanagawa-text-primary);
+  background: var(--kanagawa-bg-hover);
+  padding: 4px 8px;
+}
+
+.widget-inhibitors > button:hover {
+  background: var(--kanagawa-accent);
+}
+
+/* Floating Notifications */
+.floating-notifications .notification {
+  background: var(--kanagawa-bg-alt);
+  border: 2px solid var(--kanagawa-border);
+  margin: 4px;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  max-width: 320px;
+}
+
+/* Notifications */
+.notification-row {
+  outline: none;
+  margin: 0 0 4px 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.notification-row:hover {
+  background: var(--kanagawa-bg-hover);
+}
+
+.notification {
+  background: var(--kanagawa-bg-alt);
+  border: 1px solid var(--kanagawa-border);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.notification:hover {
+  background: var(--kanagawa-bg-hover);
+}
+
+.notification-content {
+  background: transparent;
+  padding: 8px;
+  margin: 0;
+}
+
+.notification-default-action {
+  margin: 0;
+  padding: 0;
+}
+
+/* Text Elements */
+.summary {
+  color: var(--kanagawa-text-primary);
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.time {
+  color: var(--kanagawa-text-disabled);
+  margin-left: 8px;
+}
+
+.body {
+  color: var(--kanagawa-text-secondary);
+  margin-top: 2px;
+}
+
+.app-name {
+  color: var(--kanagawa-text-disabled);
+}
+
+/* Icons and Images */
+.notification-icon {
+  margin-right: 8px;
+}
+
+.image {
+  margin-right: 8px;
+}
+
+/* Close Button */
+.close-button {
+  background: var(--kanagawa-bg-hover);
+  color: var(--kanagawa-text-primary);
+  margin: 4px;
+  padding: 2px 6px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.close-button:hover {
+  background: var(--kanagawa-accent);
+  color: var(--kanagawa-bg);
+}
+
+/* Action Buttons */
+.notification-action {
+  background: var(--kanagawa-bg-hover);
+  color: var(--kanagawa-text-primary);
+  border: 1px solid var(--kanagawa-border);
+  margin: 2px;
+  padding: 4px 8px;
+}
+
+.notification-action:hover {
+  background: var(--kanagawa-accent);
+  color: var(--kanagawa-bg);
+}
+
+/* Inline Reply */
+.inline-reply {
+  background: var(--kanagawa-bg-darker);
+  color: var(--kanagawa-text-primary);
+  border: 1px solid var(--kanagawa-border);
+  padding: 4px;
+  margin: 2px;
+}
+
+.inline-reply:focus {
+  border-color: var(--kanagawa-accent);
+}
+
+/* Scrollbar */
+.blank-window scrollbar {
+  background: transparent;
+}
+
+.blank-window scrollbar trough {
+  background: var(--kanagawa-bg-darker);
+}
+
+.blank-window scrollbar slider {
+  background: var(--kanagawa-border);
+  min-width: 8px;
+}
+
+.blank-window scrollbar slider:hover {
+  background: var(--kanagawa-accent);
+}

@@ -1,0 +1,35 @@
+/* Kanagawa color scheme for SwayNC */
+:root {
+  /* Backgrounds */
+  --kanagawa-bg: #49443C; /* Using primary-container/surface as main background */
+  --kanagawa-bg-alt: #3D3934; /* Using secondary-container/surface-dim for alternate backgrounds */
+  --kanagawa-bg-hover: #5A554E; /* Using surface-bright/surface-container-high for hover states */
+  --kanagawa-bg-darker: #3D3934; /* Using secondary-container/surface-dim */
+
+  /* Text colors */
+  --kanagawa-text-primary: #DCD7BA; /* on-primary/on-primary-container/secondary */
+  --kanagawa-text-secondary: #C0A36E; /* on-surface */
+  --kanagawa-text-disabled: #8D8881; /* on-surface-variant */
+
+  /* Accent/Highlight colors */
+  --kanagawa-accent: #C34043; /* primary/error */
+  --kanagawa-accent-alt: #98BB6C; /* from waybar kanagawa-style.css for battery charging */
+  --kanagawa-accent-active: #8EA4A2; /* from waybar kanagawa-style.css for idle_inhibitor */
+
+  /* Borders */
+  --kanagawa-border: rgba(220, 215, 186, 0.15); /* A translucent version of on-primary for borders */
+
+  /* Specific swaync mappings */
+  --cc-bg: var(--kanagawa-bg);
+  --noti-bg: var(--kanagawa-bg-alt);
+  --noti-bg-alpha: 0.8; /* Keeping default alpha for transparency */
+  --noti-bg-darker: var(--kanagawa-bg-darker);
+  --noti-bg-hover: var(--kanagawa-bg-hover);
+  --noti-bg-focus: rgba(var(--kanagawa-bg-hover), 0.6); /* Translucent hover */
+  --noti-close-bg: var(--kanagawa-bg-hover);
+  --noti-close-bg-hover: var(--kanagawa-accent); /* Using accent for close hover */
+  --text-color: var(--kanagawa-text-primary);
+  --text-color-disabled: var(--kanagawa-text-disabled);
+  --bg-selected: var(--kanagawa-accent); /* Using accent for selected background */
+  --noti-border-color: var(--kanagawa-border);
+}
