@@ -1,0 +1,11 @@
+/home/v4h/dotfiles/zellij/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/deps/time-d67c6f7f0236e97f.d: /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/lib.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/display.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/duration.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/parse.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/sys.rs
+
+/home/v4h/dotfiles/zellij/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/deps/libtime-d67c6f7f0236e97f.rlib: /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/lib.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/display.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/duration.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/parse.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/sys.rs
+
+/home/v4h/dotfiles/zellij/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/deps/libtime-d67c6f7f0236e97f.rmeta: /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/lib.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/display.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/duration.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/parse.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/sys.rs
+
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/lib.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/display.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/duration.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/parse.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/time-0.1.45/src/sys.rs:

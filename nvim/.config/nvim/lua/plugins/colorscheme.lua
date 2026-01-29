@@ -35,17 +35,18 @@ return {
       })
       -- ######################################### set default here ###########################################
       -- Set this as default colorscheme
-      vim.cmd("colorscheme kanagawa")
+      vim.cmd("colorscheme onedark")
     end,
   },
   {
+    -- this bitchass theme doesnt do transparent background // so much wasted time - kill me already
     "kepano/flexoki-neovim",
     lazy = false,
     priority = 1000,
     config = function()
       require("flexoki").setup({
         transparent = true,
-        overrides = function(colors)
+        overrides = function()
           return {
             Normal = { bg = "none" },
             NormalNC = { bg = "none" },
@@ -109,10 +110,17 @@ return {
         },
         colors = {},
         highlights = {
+          Normal = { bg = "none" },
+          NormalNC = { bg = "none" },
+          NormalFloat = { bg = "none" },
           LineNr = { bg = "none" },
           SignColumn = { bg = "none" },
           CursorLine = { bg = "none" },
           CursorLineNr = { bg = "none" },
+          StatusLine = { bg = "none" },
+          StatusLineNC = { bg = "none" },
+          VertSplit = { bg = "none" },
+          WinSeparator = { bg = "none" },
         },
       })
     end,

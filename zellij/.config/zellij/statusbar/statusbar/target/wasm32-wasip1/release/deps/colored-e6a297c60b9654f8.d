@@ -1,0 +1,11 @@
+/home/v4h/dotfiles/zellij/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/deps/colored-e6a297c60b9654f8.d: /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/lib.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/color.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/control.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/style.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/customcolors.rs
+
+/home/v4h/dotfiles/zellij/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/deps/libcolored-e6a297c60b9654f8.rlib: /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/lib.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/color.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/control.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/style.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/customcolors.rs
+
+/home/v4h/dotfiles/zellij/.config/zellij/statusbar/dotfiles/bin/zellij/statusbar/target/wasm32-wasip1/release/deps/libcolored-e6a297c60b9654f8.rmeta: /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/lib.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/color.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/control.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/style.rs /home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/customcolors.rs
+
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/lib.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/color.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/control.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/style.rs:
+/home/v4h/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/colored-2.0.4/src/customcolors.rs:

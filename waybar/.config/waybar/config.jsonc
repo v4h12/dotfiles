@@ -73,6 +73,7 @@
       "(.*)Mozilla Firefox": "󰈹 Firefox",
       "(.*) - Visual Studio Code": "󰨞 $1",
       "(.*) - Code": "󰨞 $1",
+      "(.*) - Qutebrowser": " $1",
       "(.*) - Discord": "󰙯 $1",
       "(.*)Spotify": "󰓇 Spotify",
       "(.*) - Terminal": "󰆍 $1",
