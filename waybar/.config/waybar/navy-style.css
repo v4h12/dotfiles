@@ -6,12 +6,13 @@
     font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
     font-size: 11px;
     min-height: 0;
-    color: #b8b8d1;
+    /* color: #b8b8d1; */
+    color: rgba(211, 192, 105, 0.85);
 }
 
 /* Main Window */
 window#waybar {
-    background: #16213e;
+    background: rgba(22, 33, 62, 0.69);
     padding: 0 4px;
     margin: 8px;
     /* border: 1px solid #ffffff; */
@@ -36,7 +37,8 @@ window#waybar {
 
 #custom-special-workspace.occupied {
     padding: 0 5px;
-    color: #b8b8d1;
+    /* color: #b8b8d1; */
+    color: rgba(195, 64, 67, 0.80);
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -75,6 +77,7 @@ window#waybar {
 
 #clock {
     font-weight: bold;
+    color: rgba(195, 64, 67, 0.80);
 }
 
 /* Hover Effect */
@@ -94,7 +97,7 @@ window#waybar {
 
 #workspaces button.active {
     color: #b8b8d1;
-    background: #243552;
+    /* background: #243552; */
     /* border: 1px solid #ffffff; */
     box-shadow: none;
     font-weight: bold;
@@ -134,13 +137,16 @@ window#waybar {
 
 /* Tooltip */
 tooltip {
-    background: #1a1a2e;
-    border: 1px solid #2d2d4a;
+    /* background: #1a1a2e; */
+    background: rgba(22, 33, 62, 0.69);
+    /* border: 1px solid #2d2d4a; */
+    border: none;
     box-shadow: none;
     color: #b8b8d1;
     padding: 5px 8px;
 }
 
 tooltip label {
-    color: #b8b8d1;
+    /* color: #b8b8d1; */
+    color: rgba(211, 192, 105, 0.85);
 }

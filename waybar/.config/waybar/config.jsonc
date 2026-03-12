@@ -8,29 +8,45 @@
   "margin-left": 0,
   "margin-right": 0,
   "modules-left": [
-    "custom/launcher",
+    // "custom/launcher",
     "hyprland/workspaces",
     "hyprland/window",
     "custom/special-workspace"
   ],
   "modules-center": [
-    "clock#time",
-    "clock#date",
-    "custom/bin"
+    "clock#time"
+    // "clock#date"
   ],
   "modules-right": [
-    "custom/weather",
-    "idle_inhibitor",
-    "custom/gammastep",
-    "wireplumber",
-    "backlight",
-    "bluetooth",
-    "network",
+    // "custom/bin",
+    // "custom/weather",
+    // "idle_inhibitor",
+    "group/controls",
     "battery",
     "cpu",
     "memory",
     "tray"
   ],
+  "group/controls": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-shown",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/controls-icon",
+      "custom/gammastep",
+      "wireplumber",
+      "backlight",
+      "bluetooth",
+      "network"
+    ]
+  },
+  "custom/controls-icon": {
+    "format": " | ",
+    "tooltip": false
+  },
   "custom/launcher": {
     "padding": "2px",
     "format": " 󰣇 ",
@@ -47,18 +63,18 @@
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
-    "format": "{name}",
+    "format": "[{icon}]",
     "format-icons": {
-      "1": "󰲠",
-      "2": "󰲢",
-      "3": "󰲤",
-      "4": "󰲦",
-      "5": "󰲨",
-      "6": "󰲪",
-      "7": "󰲬",
-      "8": "󰲮",
-      "9": "󰲰",
-      "10": "󰿬"
+      "[1]": "[󰲠]",
+      "[2]": "[󰲢]",
+      "[3]": "[󰲤]",
+      "[4]": "[󰲦]",
+      "[5]": "[󰲨]",
+      "[6]": "[󰲪]",
+      "[7]": "[󰲬]",
+      "[8]": "[󰲮]",
+      "[9]": "[󰲰]",
+      "[10]": "[󰿬]"
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -73,9 +89,9 @@
       "(.*)Mozilla Firefox": "󰈹 Firefox",
       "(.*) - Visual Studio Code": "󰨞 $1",
       "(.*) - Code": "󰨞 $1",
+      "(.*) - neovim": " $1",
       "(.*) - Qutebrowser": " $1",
       "(.*) - Discord": "󰙯 $1",
-      "(.*)Spotify": "󰓇 Spotify",
       "(.*) - Terminal": "󰆍 $1",
       "(.*) - Artha": "󰘝 Artha"
     }
@@ -102,14 +118,9 @@
   },
   "clock#time": {
     "timezone": "Africa/Johannesburg",
-    "format": "󰥔 {:%H:%M}",
-    "interval": 1,
-    "tooltip": false
-  },
-  "clock#date": {
-    "timezone": "Africa/Johannesburg",
-    "format": "󰃭 {:%a %d %b}",
+    "format": "[{:%H:%M}]",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip": true,
     "actions": {
       "on-click": "mode",
       "on-click-right": "shift_up",
@@ -118,6 +129,19 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     },
+    // "clock#date": {
+    //   "timezone": "Africa/Johannesburg",
+    //   // "format": "{:%a %d %b}",
+    //   "format": "󰃭 {:%Y/%m/%d}",
+    //   "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    //   "actions": {
+    //     "on-click": "mode",
+    //     "on-click-right": "shift_up",
+    //     "on-click-forward": "tz_up",
+    //     "on-click-backward": "tz_down",
+    //     "on-scroll-up": "shift_up",
+    //     "on-scroll-down": "shift_down"
+    //   },
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -148,7 +172,8 @@
     "on-click": "notify-send -t 10000 'Weather Forecast' \"$(curl -s 'wttr.in/Port+Elizabeth?format=3')\""
   },
   "cpu": {
-    "format": "󰻠 {usage}%",
+    // "format": "󰻠 {usage}%",
+    "format": "CPU:[{usage}%]",
     "tooltip": true,
     "states": {
       "warning": 60,
@@ -158,7 +183,8 @@
     "interval": 2
   },
   "memory": {
-    "format": "󰾆 {percentage}%",
+    // "format": "󰾆 {percentage}%",
+    "format": "MEM:[{percentage}%]",
     "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G ({percentage}%)\nSwap: {swapUsed:0.1f}G/{swapTotal:0.1f}G ({swapPercentage}%)",
     "states": {
       "warning": 60,
@@ -186,11 +212,15 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}{capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰂄 {capacity}%",
+    // "format": "{icon}{capacity}%",
+    "format": "BAT:[{capacity}%]",
+    // "format-charging": "󰂄 {capacity}%",
+    "format-charging": "BAT:[{capacity}%]",
+    // "format-plugged": "󰂄 {capacity}%",
+    "format-plugged": "BAT:[{capacity}%]",
     "format-alt": "{icon} {time}",
-    "format-full": "󰁹 Full",
+    // "format-full": "󰁹 Full",
+    "format-full": "BAT:[Full]",
     "format-icons": [
       "󰁺",
       "󰁻",

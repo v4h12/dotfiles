@@ -58,7 +58,7 @@ window#waybar {
 
 #custom-special-workspace.occupied {
     padding: 0 5px;
-    color: #ba531a;
+    color: #2f8a4f;
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -93,11 +93,12 @@ window#waybar {
 
 #clock {
   font-weight: bold;
-  color: #ba531a;
+  color: #ab918e;
 }
 
 #custom-bin {
-  color: #524f4f;
+  /* color: #524f4f; */
+  color: #2f8a4f;
 }
 
 #custom-launcher:hover, #hyprland-workspaces:hover, .right-modules:hover {
@@ -106,11 +107,11 @@ window#waybar {
 }
 
 #cpu.warning, #memory.warning, #battery.warning {
-  color: #aba41d;
+  color: #ba531a;
 }
 
 #cpu.critical, #memory.critical, #battery.critical:not(.charging) {
-  color: #ba531a;
+  color: #c42e23;
   background: transparent;
 }
 
@@ -138,7 +139,8 @@ calendar.months {
 }
 
 calendar.days {
-  color: #c9a67a;
+  /* color: #c9a67a; */
+  color: #6f8f7a;
 }
 
 calendar.weeks {
@@ -151,7 +153,7 @@ calendar.weekdays {
 
 calendar.today {
   /* color: #f5d9a8; */
-  color: #ffffff;
+  color: #6f8f7a;
   /* text-shadow: 0 0 5px rgba(245, 217, 168, 1.0); */
   text-shadow: 0 0 5px rgba(100, 100, 100, 1.0);
   font-weight: bold;

@@ -81,7 +81,7 @@ c.colors.webpage.bg = colors["bg"]
 
 # Tab formatting and fonts
 c.tabs.title.format = "{audio}{current_title}"
-c.fonts.web.size.default = 11
+c.fonts.web.size.default = 9
 
 # Search engines
 c.url.searchengines = {
@@ -106,6 +106,7 @@ c.auto_save.session = True  # save tabs on quit/restart
 
 # Keybindings
 config.bind("=", "cmd-set-text -s :open")
+config.bind("re", "reload")
 config.bind("<Mod1-h>", "history")
 config.bind("cc", 'hint images spawn sh -c "cliphist link {hint-url}"')
 config.bind("cs", "cmd-set-text -s :config-source")
@@ -157,4 +158,4 @@ config.set(
 )
 
 # Adblocking
-c.content.blocking.enabled = True
+config.set("content.blocking.enabled", False, "https://*.youtube.com/*")

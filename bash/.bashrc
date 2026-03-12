@@ -9,7 +9,11 @@
 # PS1='%n@%m %~\n$ '
 PS1='\[\e[97m\]\u@\h \w\n\$ \[\e[0m\]'
 alias ls='eza -l --color=always --group-directories-first --hyperlink'
+# alias ls='eza -1 --color=always --group-directories-first --hyperlink'
 alias la='eza --color=always -T --hyperlink'
+alias weather='curl wttr.in/Port+Elizabeth'
+alias icat='kitten icat'
+alias lsblk='lsblk | bat -l conf -p'
 alias grep='grep --color=auto'
 alias hypr='start-hyprland'
 alias neofetch="fastfetch"
@@ -19,11 +23,9 @@ alias bl='blesh-load'
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
 
-#git aliases
-alias gis="git status"
-alias gia="git add"
-alias gic="git commit -m"
-alias gip="git push"
+# terminal binds
+# this line doesnt currently work
+bind -x '"\M-t":trasher -f'
 
 # zellij quickbinds
 alias za="zellij attach"              # attachs most recent session
@@ -52,6 +54,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH=/usr/local/bin:$PATH
 export EDITOR=/usr/bin/nvim
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 # ---------- For looks ---------- #
 PROMPT_COMMAND='if [ -z "$FIRST_PROMPT" ]; then FIRST_PROMPT=1; else echo; fi'
@@ -93,3 +97,6 @@ blesh-load() {
 # ------ Script for ollama ------ #
 # ------------------------------- #
 . "$HOME/.cargo/env"
+
+# Created by `pipx` on 2026-02-25 08:15:17
+export PATH="$PATH:/home/v4h/.local/bin"

@@ -41,6 +41,7 @@ settings:
     https://claude.ai: access-paste
     https://docs.python.org: access-paste
     https://github.com: access-paste
+    https://music.apple.com: access-paste
     https://stackoverflow.com: access-paste
   statusbar.show:
     global: always

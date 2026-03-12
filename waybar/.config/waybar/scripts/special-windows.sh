@@ -1,9 +1,17 @@
 #!/bin/bash
-# Get all windows in special workspaces with their class names
+
+# Get all windows in special workspaces with their effective class names (using title for kitty specifics)
 windows=$(hyprctl clients -j | jq -r '
   .[] |
   select(.workspace.name | startswith("special")) |
-  .class
+  if .class == "kitty" then
+    if .title | ascii_downcase | contains("yazi") then "yazi"
+    elif .title | ascii_downcase | contains("rmpc") then "rmpc"
+    # elif .title | ascii_downcase | contains("Volume Control") then "Volume Control"
+    else .class
+    end
+  else .class
+  end
 ' | sort -u)
 
 # Map common application classes to icons (nerd fonts)
@@ -14,14 +22,19 @@ get_icon() {
   chromium | chrome | brave) echo "󰊯" ;;
   qutebrowser | Qutebrowser | org.qutebrowser.qutebrowser) echo " " ;;
   zathura | Zathura | org.pwmt.zathura | okular | evince) echo "" ;;
-  thunar | nautilus | dolphin | pcmanfm) echo "" ;;
+  thunar | nautilus | dolphin | pcmanfm) echo "" ;;
+  org.pulseaudio.pavucontrol | Volume\ Control) echo "" ;;
+  nm-connection-editor) echo "󱘖" ;;
+  virt-manager) echo "" ;;
   discord | Discord) echo "󰙯" ;;
   code | Code | code-oss | VSCodium) echo "󰨞" ;;
   obsidian | Obsidian) echo "󱞁" ;;
   artha | Artha) echo "󰘝" ;;
   sqlite | sqlitebrowser) echo "" ;;
   steam | Steam) echo "󰓓" ;;
-  *) echo "" ;; # Default window icon
+  yazi) echo "" ;; # Example: folder icon for yazi (file manager)
+  rmpc) echo "󰲹" ;; # Example: music note for rmpc (music client)
+  *) echo "" ;;     # Default window icon
   esac
 }
 
@@ -33,7 +46,6 @@ while IFS= read -r class; do
   [ -z "$class" ] && continue
   icon=$(get_icon "$class")
   icons="$icons $icon"
-
   # Add newline before each entry except the first
   if [ "$first" = true ]; then
     tooltip="$class"
