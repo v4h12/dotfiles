@@ -1,0 +1,6 @@
+* {
+    bg:      #f9fafb;
+    fg:      #1f2937;
+    accent:  #2563eb;
+    sep:     #e5e7eb;
+}

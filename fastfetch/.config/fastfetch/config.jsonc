@@ -1,7 +1,9 @@
 {
   "logo": {
     "type": "file",
+    // "type": "command-raw",
     "source": "~/Pictures/ascii-art/Venus-ascii.txt",
+    // "source": "curl ascii.live/earth",
     "height": 11,
     "width": 11,
     "padding": {

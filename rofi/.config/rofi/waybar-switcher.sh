@@ -2,12 +2,14 @@
 
 WAYBAR_CONFIG_DIR="$HOME/.config/waybar"
 CACHE_FILE="$HOME/.cache/waybar-current-style"
-ROFI_COLORS_DIR="$HOME/.config/rofi/waybar_colors"
+# ROFI_COLORS_DIR="$HOME/.config/rofi/waybar_colors"
+ROFI_COLORS_DIR="$HOME/.config/rofi/rofi_colors"
 ROFI_COLORS_FILE="$HOME/.config/rofi/colors.rasi"
 SWAYNC_CONFIG_DIR="$HOME/.config/swaync"
 
-options="Default\nLight\nNavy\nMaroon\nCream\nTransparent\nDark-Transparent\nGrey-Transparent\nCirc\nKanagawa\nRamude\nHoltee"
-chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Waybar Theme" -theme ~/.config/rofi/launchers/type-1/style-10.rasi)
+options="Default\nLight\nNavy\nMaroon\nCream\nTransparent\nDark-Transparent\nGrey\nCirc\nKanagawa\nRamude\nHoltee\nGreish"
+# chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Waybar Theme" -theme ~/.config/rofi/launchers/type-1/style-10.rasi)
+chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Waybar Theme" -theme ~/.config/rofi/config.rasi)
 
 if [ -n "$chosen" ]; then
   killall waybar
@@ -49,10 +51,10 @@ if [ -n "$chosen" ]; then
     ROFI_STYLE="dark-transparent"
     SWAYNC_STYLE="dark-transparent-style.css"
     ;;
-  "Grey-Transparent")
-    STYLE="grey-transparent-style.css"
-    ROFI_STYLE="grey-transparent"
-    SWAYNC_STYLE="grey-transparent-style.css"
+  "Grey")
+    STYLE="grey-style.css"
+    ROFI_STYLE="grey"
+    SWAYNC_STYLE="grey-style.css"
     ;;
   "Circ")
     STYLE="circ-style.css"
@@ -76,6 +78,14 @@ if [ -n "$chosen" ]; then
     ROFI_STYLE="default"
     SWAYNC_STYLE="dark-style.css"
     ;;
+
+  "Greish")
+    STYLE="greish-style.css"
+    # ROFI_STYLE="dark-transparent"
+    ROFI_STYLE="greish"
+    SWAYNC_STYLE="dark-transparent-style.css"
+    ;;
+
   esac
 
   if [ -n "$STYLE" ]; then

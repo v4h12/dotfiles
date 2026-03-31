@@ -3,6 +3,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # ----- coloring and shortcuts for programs ----- #
 #PS1='[\u@\h \W]\$ ' #user>host>Workingdir>$user#root
@@ -15,13 +16,22 @@ alias weather='curl wttr.in/Port+Elizabeth'
 alias icat='kitten icat'
 alias lsblk='lsblk | bat -l conf -p'
 alias grep='grep --color=auto'
+alias space='df -h | grep -A1 Filesystem'
 alias hypr='start-hyprland'
 alias neofetch="fastfetch"
 alias matrix="unimatrix -n -s 96 -l 'o'"
 alias print='lp -d Canon_TS5100_series'
+alias emacs="emacsclient -c -a 'emacs'"
+alias semacs="/usr/bin/emacs --daemon --init-directory /home/v4h/.config/emacs"
+alias eorg="for f in *.md; do pandoc "$f" -o "${f%.md}.org"; done"
 alias bl='blesh-load'
+alias usb='cd /run/media/v4h'
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
+alias godot="cd Coding/packages/godot && ./Godot_v4.6.1-stable_linux.x86_64"
+alias ytpl="mpv --no-video "https://www.youtube.com/playlist?list=PLiaJXFKh9MTtuempS8M0MHA7wpiToulgb""
+alias ytp="mpv --no-video"
+alias venv="source venv/bin/activate"
 
 # terminal binds
 # this line doesnt currently work
@@ -32,6 +42,8 @@ alias za="zellij attach"              # attachs most recent session
 alias zls="zellij ls"                 # lists all sessions
 alias zd="zellij delete-all-sessions" # deletes all sessions
 alias zs="zellij -s"                  # creates a session - type name after
+
+eval "$(register-python-argcomplete trasher)"
 
 # check system services with fzf
 svc() {
@@ -44,10 +56,14 @@ svc() {
 
 # alt + c - this is for interactive fzf search for 'cd'
 
+clip() {
+  cliphist list -max-items 100 | fzf | cliphist decode | wl-copy
+}
+
 # aur and yay detailed search
 alias parup="paru -Slq | fzf --multi --preview 'paru -Sii {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -S"
 # file search into micro editor
-alias fzff='nvim "$(find . -type f | fzf --preview "cat {}")"'
+alias fzff='nvim "$(find . -type f | fzf --multi --preview "cat {}")"'
 
 # ----- exports for sysman and looks ----- #
 export LANG=en_US.UTF-8
@@ -56,6 +72,9 @@ export PATH=/usr/local/bin:$PATH
 export EDITOR=/usr/bin/nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
+
+# Created by `pipx` on 2026-02-25 08:15:17
+export PATH="$PATH:/home/v4h/.local/bin"
 
 # ---------- For looks ---------- #
 PROMPT_COMMAND='if [ -z "$FIRST_PROMPT" ]; then FIRST_PROMPT=1; else echo; fi'
@@ -96,7 +115,7 @@ blesh-load() {
 
 # ------ Script for ollama ------ #
 # ------------------------------- #
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
-# Created by `pipx` on 2026-02-25 08:15:17
-export PATH="$PATH:/home/v4h/.local/bin"
+# opencode
+export PATH=/home/v4h/.opencode/bin:$PATH
