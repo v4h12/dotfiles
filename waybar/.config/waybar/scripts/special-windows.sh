@@ -32,9 +32,9 @@ get_icon() {
   artha | Artha) echo "󰘝" ;;
   sqlite | sqlitebrowser) echo "" ;;
   steam | Steam) echo "󰓓" ;;
-  yazi) echo "" ;; # Example: folder icon for yazi (file manager)
-  rmpc) echo "󰲹" ;; # Example: music note for rmpc (music client)
-  *) echo "" ;;     # Default window icon
+  yazi) echo "" ;;
+  rmpc) echo "󰲹" ;;
+  *) echo "" ;;
   esac
 }
 

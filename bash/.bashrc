@@ -15,13 +15,16 @@ alias weather='curl wttr.in/Port+Elizabeth'
 alias icat='kitten icat'
 alias lsblk='lsblk | bat -l conf -p'
 alias grep='grep --color=auto'
+alias space='df -h | grep -A1 Filesystem'
 alias hypr='start-hyprland'
 alias neofetch="fastfetch"
 alias matrix="unimatrix -n -s 96 -l 'o'"
 alias print='lp -d Canon_TS5100_series'
 alias bl='blesh-load'
+alias usb='cd /run/media/v4h'
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
+alias godot="cd Coding/packages/godot && ./Godot_v4.6.1-stable_linux.x86_64"
 
 # terminal binds
 # this line doesnt currently work
@@ -33,6 +36,8 @@ alias zls="zellij ls"                 # lists all sessions
 alias zd="zellij delete-all-sessions" # deletes all sessions
 alias zs="zellij -s"                  # creates a session - type name after
 
+eval "$(register-python-argcomplete trasher)"
+
 # check system services with fzf
 svc() {
   systemctl list-units --type=service --all |
@@ -43,6 +48,10 @@ svc() {
 # ----------- fuzzy find search ---------- #
 
 # alt + c - this is for interactive fzf search for 'cd'
+
+clip() {
+  cliphist list -max-items 100 | fzf | cliphist decode | wl-copy
+}
 
 # aur and yay detailed search
 alias parup="paru -Slq | fzf --multi --preview 'paru -Sii {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -S"

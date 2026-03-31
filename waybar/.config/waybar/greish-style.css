@@ -1,0 +1,149 @@
+/* Global Style */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 11px;
+  min-height: 0;
+  color: rgba(228, 247, 225, 0.35);
+}
+
+/* Main Window */
+window#waybar {
+  background: #1a1a1a;
+  padding: 0 4px;
+  margin: 0;
+}
+
+#custom-special-workspace {
+  padding: 0 5px;
+  margin: 0;
+  margin-left: -8px;
+  color: #3d5566;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+  padding: 0 5px;
+  /* color: rgba(228, 247, 225, 0.75); */
+  color: #3d5566;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Unified Module Container - Left */
+#custom-launcher, #workspaces {
+  background: transparent;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Unified Module Container - Right */
+#right-modules {
+  background: transparent;
+  padding: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border: 1px solid rgba(61, 85, 102, 0.2);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(61, 85, 102, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Module Styling within the unified container */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight, #bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+#clock {
+  font-weight: bold;
+  color: rgba(228, 247, 225, 0.75);
+}
+
+/* Hover Effect */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+  background: transparent;
+  box-shadow: transparent;
+}
+
+/* Workspaces */
+#workspaces button {
+  background: #2a2a2a;
+  color: rgba(228, 247, 225, 0.35);
+  font-weight: normal;
+  padding: 0 4px;
+  margin: 0 1px;
+  border-right: 1px solid #1a1a1a;
+  transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+  background: #3d5566;
+  color: rgba(228, 247, 225, 0.75);
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  background: #333333;
+  color: rgba(228, 247, 225, 0.65);
+}
+
+/* Module States */
+#cpu.warning, #memory.warning, #battery.warning {
+  /* color: rgba(255, 234, 5, 0.85); */
+  color: #8c811d;
+  text-shadow: 0 0 5px rgba(61, 85, 102, 0.6);
+}
+
+#cpu.critical, #memory.critical, #battery.critical:not(.charging) {
+  /* color: rgba(204, 49, 34, 0.85); */
+  color: #8c281d;
+  background: transparent;
+  text-shadow: 0 0 8px rgba(204, 49, 34, 0.8);
+}
+
+#battery.charging {
+  /* color: rgba(228, 247, 225, 0.85); */
+  color: #338c2e;
+  text-shadow: 0 0 5px rgba(61, 85, 102, 0.5);
+}
+
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: rgba(228, 247, 225, 0.25);
+  font-style: italic;
+}
+
+#idle_inhibitor.activated {
+  color: #3d5566;
+}
+
+#custom-gammastep.activated {
+  color: #3d5566;
+}
+
+/* Tooltip */
+tooltip label {
+  color: rgba(228, 247, 225, 0.75);
+}
+
+tooltip {
+  background: #1a1a1a;
+  border: 1px solid rgba(61, 85, 102, 0.30);
+  box-shadow: none;
+  color: rgba(228, 247, 225, 0.35);
+  padding: 2px 4px;
+}
