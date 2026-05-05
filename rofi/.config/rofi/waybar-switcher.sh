@@ -81,7 +81,6 @@ if [ -n "$chosen" ]; then
 
   "Greish")
     STYLE="greish-style.css"
-    # ROFI_STYLE="dark-transparent"
     ROFI_STYLE="greish"
     SWAYNC_STYLE="dark-transparent-style.css"
     ;;
