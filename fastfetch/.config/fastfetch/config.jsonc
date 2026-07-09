@@ -1,9 +1,7 @@
 {
   "logo": {
     "type": "file",
-    // "type": "command-raw",
     "source": "~/Pictures/ascii-art/Venus-ascii.txt",
-    // "source": "curl ascii.live/earth",
     "height": 11,
     "width": 11,
     "padding": {
@@ -19,7 +17,7 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m[==================== HARDWARE ====================]"
+      "format": "\u001b[90m[-------------------- HARDWARE --------------------]"
     },
     {
       "type": "host",
@@ -48,12 +46,12 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m[==================================================]"
+      "format": "\u001b[90m[--------------------------------------------------]"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m[==================== SOFTWARE ====================]"
+      "format": "\u001b[90m[-------------------- SOFTWARE --------------------]"
     },
     {
       "type": "os",
@@ -103,18 +101,18 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m[=================================================]"
+      "format": "\u001b[90m[-------------------------------------------------]"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m[================ RUNTIME_METRICS ================]"
+      "format": "\u001b[90m[---------------- RUNTIME_METRICS ----------------]"
     },
     {
       "type": "command",
       "key": " >  AGE//",
       "keyColor": "white",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "text": "birth_install-$(stat -c %W /); current-$(date +%s); time_progression-$((current - birth_install)); days_difference-$((time_progression / 86400)); echo $days_difference days"
     },
     {
       "type": "uptime",
@@ -128,7 +126,7 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m[=================================================]"
+      "format": "\u001b[90m[-------------------------------------------------]"
     }
   ]
 }

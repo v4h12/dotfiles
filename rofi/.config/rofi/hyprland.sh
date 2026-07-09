@@ -1,23 +1,36 @@
 #!/bin/bash
 
-HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
+HYPR_CONF="$HOME/.config/hypr/hyprland.lua"
+CONFIG_DIR="$HOME/.config/hypr"
 
 DIRS=$(
-  grep -E '^[[:space:]]*source[[:space:]]*=' "$HYPR_CONF" |
-    sed -E 's/^[[:space:]]*source[[:space:]]*=[[:space:]]*//; s/"//g; s/\r//' |
-    while read -r line; do
-      echo "${line/#\~/$HOME}"
+    grep -E '^[[:space:]]*require\(' "$HYPR_CONF" |
+    sed -E 's/.*require\("([^"]+)"\).*/\1/' |
+    while read -r module; do
+        echo "$CONFIG_DIR/$module.lua"
     done
 )
 
 if [ -z "$DIRS" ]; then
-  echo "No Sources found in $HYPR_CONF" | rofi -dmenu -p "Error" -theme ~/.config/rofi/launchers/type-1/style-5.rasi
-  exit 1
+    echo "No Lua modules found in $HYPR_CONF" |
+        rofi -dmenu -p "Error" -theme ~/.config/rofi/config.rasi
+    exit 1
 fi
 
-# CHOICE=$(echo "$DIRS" | rofi -dmenu -p "Hypr Configs" -theme ~/.config/rofi/launchers/type-1/style-5.rasi)
-CHOICE=$(echo "$DIRS" | rofi -dmenu -p "Hypr Configs" -theme ~/.config/rofi/config.rasi)
+CHOICE=$(
+    echo "$DIRS" |
+    rofi -dmenu -p "Hypr Lua Configs" \
+    -theme ~/.config/rofi/config.rasi
+)
+
+# if [ -n "$CHOICE" ]; then
+#     kitty -e nvim "$CHOICE"
+# fi
 
 if [ -n "$CHOICE" ]; then
-  kitty -e nvim "$CHOICE"
+    if tmux list-sessions &>/dev/null; then
+        tmux send-keys -t sesh "nvim '$CHOICE'" Enter
+    else
+        kitty -e nvim "$CHOICE"
+    fi
 fi

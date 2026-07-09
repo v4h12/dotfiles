@@ -31,7 +31,7 @@ settings:
         tH: config-cycle tabs.show multiple never
         tT: config-cycle tabs.position top left
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   colors.webpage.darkmode.policy.page:
     global: always
   colors.webpage.preferred_color_scheme:
@@ -43,6 +43,8 @@ settings:
     https://github.com: access-paste
     https://music.apple.com: access-paste
     https://stackoverflow.com: access-paste
+  content.notifications.enabled:
+    https://netfilm.world: false
   statusbar.show:
     global: always
   tabs.position:

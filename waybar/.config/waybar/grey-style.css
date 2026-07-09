@@ -91,6 +91,7 @@ window#waybar {
 /* Workspaces - Active button with subtle dark glow */
 #workspaces button {
   background: transparent;
+  /* background: #8b8c7a; */
   color: rgba(89, 89, 89, 0.8);
   font-weight: normal;
   padding: 0 4px;

@@ -81,12 +81,13 @@ c.colors.webpage.bg = colors["bg"]
 
 # Tab formatting and fonts
 c.tabs.title.format = "{audio}{current_title}"
-c.fonts.web.size.default = 9
+c.fonts.web.size.default = 11
 
 # Search engines
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
     "!aw": "https://wiki.archlinux.org/?search={}",
+    "!wik": "https://en.wikipedia.org/?search={}",
     "!apkg": "https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=",
     "!gh": "https://github.com/search?o=desc&q={}&s=stars",
     "!yt": "https://www.youtube.com/results?search_query={}",
@@ -105,6 +106,9 @@ config.load_autoconfig()  # load settings done via the gui
 c.auto_save.session = True  # save tabs on quit/restart
 
 # Keybindings
+config.bind("J", "tab-prev")
+config.bind("K", "tab-next")
+config.bind(",m", 'spawn --detach mpv {url}')
 config.bind("=", "cmd-set-text -s :open")
 config.bind("re", "reload")
 config.bind("<Mod1-h>", "history")
@@ -122,7 +126,7 @@ config.bind("tT", "config-cycle tabs.position top left")
 config.bind("gJ", "tab-move +")
 config.bind("gK", "tab-move -")
 config.bind("gm", "tab-move")
-
+config.bind("Y", "yank selection")
 
 # Dark mode for websites
 c.colors.webpage.darkmode.enabled = True
@@ -137,6 +141,7 @@ c.tabs.width = "2%"
 
 # Fonts
 c.fonts.default_family = []
+# this changes tab size
 c.fonts.default_size = "9pt"
 c.fonts.web.family.fixed = "monospace"
 c.fonts.web.family.sans_serif = "monospace"
@@ -158,4 +163,16 @@ config.set(
 )
 
 # Adblocking
+# False for youtube so it isnt blocked, refer to yt-ad skip
 config.set("content.blocking.enabled", False, "https://*.youtube.com/*")
+
+c.content.blocking.method = 'both'
+c.content.blocking.adblock.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt",
+    "https://easylist.to/easylist/fanboy-annoyance.txt",
+    "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
+    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt",
+]

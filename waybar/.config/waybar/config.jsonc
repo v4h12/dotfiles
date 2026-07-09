@@ -8,26 +8,38 @@
   "margin-left": 0,
   "margin-right": 0,
   "modules-left": [
-    // "custom/launcher",
+    "group/controls1",
     "hyprland/workspaces",
     "hyprland/window",
     "custom/special-workspace"
   ],
+  "group/controls1": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-shown",
+      "transition-left-to-right": true
+    },
+    "modules": [
+       "custom/controls-icon2",
+        "custom/music-prev",
+        "custom/music-play",
+        "custom/music-next",
+       "custom/music"
+    ]
+  },
   "modules-center": [
-    "clock#time"
-    // "clock#date"
+      "clock#time"
   ],
   "modules-right": [
-    // "custom/bin",
-    // "custom/weather",
-    // "idle_inhibitor",
-    "group/controls",
+    "group/controls2",
     "battery",
     "cpu",
     "memory",
     "tray"
+    // "group/controls3"
   ],
-  "group/controls": {
+  "group/controls2": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 300,
@@ -35,7 +47,8 @@
       "transition-left-to-right": false
     },
     "modules": [
-      "custom/controls-icon",
+      "custom/controls-icon1",
+      "idle_inhibitor",
       "custom/gammastep",
       "wireplumber",
       "backlight",
@@ -43,8 +56,33 @@
       "network"
     ]
   },
-  "custom/controls-icon": {
+  "group/controls3": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-shown",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/controls-icon3",
+      "custom/lock"
+    ]
+  },
+  "custom/controls-icon1": {
     "format": " | ",
+    "tooltip": false
+  },
+  "custom/controls-icon2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/controls-icon3": {
+    "format": " ",
+    "tooltip": false
+  },
+  "custom/lock": {
+    "format": "󰐥",
+    "on-click": "hyprlock",
     "tooltip": false
   },
   "custom/launcher": {
@@ -76,6 +114,7 @@
       "[9]": "[󰲰]",
       "[10]": "[󰿬]"
     },
+    "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "smooth-scrolling-threshold": 1
@@ -129,19 +168,7 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     },
-    // "clock#date": {
-    //   "timezone": "Africa/Johannesburg",
-    //   // "format": "{:%a %d %b}",
-    //   "format": "󰃭 {:%Y/%m/%d}",
-    //   "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    //   "actions": {
-    //     "on-click": "mode",
-    //     "on-click-right": "shift_up",
-    //     "on-click-forward": "tz_up",
-    //     "on-click-backward": "tz_down",
-    //     "on-scroll-up": "shift_up",
-    //     "on-scroll-down": "shift_down"
-    //   },
+
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -155,6 +182,43 @@
         "today": "<b>{}</b>"
       }
     }
+  },
+
+    // "custom/music": {
+    //     "format": " {}",
+    //     "return-type": "json",
+    //     "exec": "playerctl metadata --format '{\"text\": \"[{{artist}}] - [{{title}}]\", \"tooltip\": \"{{playerName}}\", \"class\": \"{{status}}\"}'",
+    //     "interval": 0,
+    //     "tooltip": false,
+    //     "on-click": "playerctl play-pause",
+    //     "on-scroll-up": "playerctl next",
+    //     "on-scroll-down": "playerctl previous"
+    // },
+
+  "custom/music": {
+   "format": "{}",
+   "return-type": "json",
+   "exec": "waybar-module-music --format '%artist% - %title%' --marquee --title-width 30 --effect-speed 150"
+  },
+  "custom/music-prev": {
+    "format": " 󰒮",
+    "on-click": "mpc prev",
+    "tooltip": false
+  },
+
+  "custom/music-play": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "mpc status | grep -q playing && echo '{\"text\":\" 󰏤 \"}' || echo '{\"text\":\" 󰐊 \"}'",
+    "interval": 1,
+    "on-click": "mpc toggle",
+    "tooltip": false
+  },
+
+  "custom/music-next": {
+    "format": "󰒭",
+    "on-click": "mpc next",
+    "tooltip": false
   },
   "custom/bin": {
     "format": " ",
@@ -190,7 +254,7 @@
       "warning": 60,
       "critical": 80
     },
-    "on-click": "foot -e btop",
+    "on-click": "kitty -e htop",
     "interval": 2
   },
   "backlight": {
@@ -212,14 +276,10 @@
       "warning": 30,
       "critical": 15
     },
-    // "format": "{icon}{capacity}%",
     "format": "BAT:[{capacity}%]",
-    // "format-charging": "󰂄 {capacity}%",
     "format-charging": "BAT:[{capacity}%]",
-    // "format-plugged": "󰂄 {capacity}%",
     "format-plugged": "BAT:[{capacity}%]",
     "format-alt": "{icon} {time}",
-    // "format-full": "󰁹 Full",
     "format-full": "BAT:[Full]",
     "format-icons": [
       "󰁺",
@@ -268,7 +328,7 @@
     "format-disconnected": "󰤭 Offline",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "on-click-right": "nm-connection-editor",
-    "on-click:": "kitty -e nmtui",
+    "on-click": "kitty -e nmtui",
     "interval": 2
   },
   "bluetooth": {
@@ -284,5 +344,5 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "blueman-manager",
     "on-click-right": "bluetoothctl disconnect"
-  }
+  },
 }

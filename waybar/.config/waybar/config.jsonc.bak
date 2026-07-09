@@ -20,7 +20,6 @@
   "modules-right": [
     // "custom/bin",
     // "custom/weather",
-    // "idle_inhibitor",
     "group/controls",
     "battery",
     "cpu",
@@ -36,6 +35,7 @@
     },
     "modules": [
       "custom/controls-icon",
+      "idle_inhibitor",
       "custom/gammastep",
       "wireplumber",
       "backlight",

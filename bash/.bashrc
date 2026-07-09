@@ -10,17 +10,17 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # PS1='%n@%m %~\n$ '
 PS1='\[\e[97m\]\u@\h \w\n\$ \[\e[0m\]'
 alias ls='eza -l --color=always --group-directories-first --hyperlink'
-# alias ls='eza -1 --color=always --group-directories-first --hyperlink'
+# alias cdl='cd {} && ls'
 alias la='eza --color=always -T --hyperlink'
 alias weather='curl wttr.in/Port+Elizabeth'
+alias uplog='cat /var/log/pacman.log | less'
 alias icat='kitten icat'
-alias lsblk='lsblk | bat -l conf -p'
-alias grep='grep --color=auto'
 alias space='df -h | grep -A1 Filesystem'
 alias hypr='start-hyprland'
 alias neofetch="fastfetch"
 alias matrix="unimatrix -n -s 96 -l 'o'"
 alias print='lp -d Canon_TS5100_series'
+alias hy='cd ~/.config/hypr && ls -la'
 alias emacs="emacsclient -c -a 'emacs'"
 alias semacs="/usr/bin/emacs --daemon --init-directory /home/v4h/.config/emacs"
 alias eorg="for f in *.md; do pandoc "$f" -o "${f%.md}.org"; done"
@@ -43,6 +43,7 @@ alias zls="zellij ls"                 # lists all sessions
 alias zd="zellij delete-all-sessions" # deletes all sessions
 alias zs="zellij -s"                  # creates a session - type name after
 
+# necessary for trasher to work, with autocomplete
 eval "$(register-python-argcomplete trasher)"
 
 # check system services with fzf
@@ -62,7 +63,7 @@ clip() {
 
 # aur and yay detailed search
 alias parup="paru -Slq | fzf --multi --preview 'paru -Sii {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -S"
-# file search into micro editor
+# file search into editor
 alias fzff='nvim "$(find . -type f | fzf --multi --preview "cat {}")"'
 
 # ----- exports for sysman and looks ----- #
@@ -77,6 +78,7 @@ export MANROFFOPT="-c"
 export PATH="$PATH:/home/v4h/.local/bin"
 
 # ---------- For looks ---------- #
+# makes the prompt disappear to '>' when using zellij
 PROMPT_COMMAND='if [ -z "$FIRST_PROMPT" ]; then FIRST_PROMPT=1; else echo; fi'
 if [ -z "$ZELLIJ" ]; then
   eval "$(starship init bash)"
@@ -91,7 +93,6 @@ fi
 # you can also go "alt+c" for built-in cd search with fzf
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
-# source /usr/share/nvm/init-nvm.sh
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 

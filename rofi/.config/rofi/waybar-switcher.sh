@@ -8,7 +8,6 @@ ROFI_COLORS_FILE="$HOME/.config/rofi/colors.rasi"
 SWAYNC_CONFIG_DIR="$HOME/.config/swaync"
 
 options="Default\nLight\nNavy\nMaroon\nCream\nTransparent\nDark-Transparent\nGrey\nCirc\nKanagawa\nRamude\nHoltee\nGreish"
-# chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Waybar Theme" -theme ~/.config/rofi/launchers/type-1/style-10.rasi)
 chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Waybar Theme" -theme ~/.config/rofi/config.rasi)
 
 if [ -n "$chosen" ]; then
