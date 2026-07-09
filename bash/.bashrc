@@ -9,7 +9,7 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 #PS1='[\u@\h \W]\$ ' #user>host>Workingdir>$user#root
 # PS1='%n@%m %~\n$ '
 PS1='\[\e[97m\]\u@\h \w\n\$ \[\e[0m\]'
-alias ls='eza -l --color=always --group-directories-first --hyperlink'
+alias ls='eza -l --color=always --group-directories-first --hyperlink auto'
 # alias cdl='cd {} && ls'
 alias la='eza --color=always -T --hyperlink'
 alias weather='curl wttr.in/Port+Elizabeth'
