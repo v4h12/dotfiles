@@ -21,10 +21,11 @@ alias neofetch="fastfetch"
 alias matrix="unimatrix -n -s 96 -l 'o'"
 alias print='lp -d Canon_TS5100_series'
 alias hy='cd ~/.config/hypr && ls -la'
-alias emacs="emacsclient -c -a 'emacs'"
+alias em="emacsclient -t -c -a 'emacs'"
 alias semacs="/usr/bin/emacs --daemon --init-directory /home/v4h/.config/emacs"
 alias eorg="for f in *.md; do pandoc "$f" -o "${f%.md}.org"; done"
 alias bl='blesh-load'
+alias za='zathura'
 alias usb='cd /run/media/v4h'
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
@@ -33,15 +34,21 @@ alias ytpl="mpv --no-video "https://www.youtube.com/playlist?list=PLiaJXFKh9MTtu
 alias ytp="mpv --no-video"
 alias venv="source venv/bin/activate"
 
+# tty specific
+alias pavutty='pulsemixer' # for audio config
+alias btctl='bluetoothctl' # bluetooth config
+alias mpvtty='mpv --profile=drm --drm-device=/dev/dri/card1'
+alias battery='cat /sys/class/power_supply/BAT0/capacity && cat /sys/class/power_supply/BAT0/status'
+
 # terminal binds
 # this line doesnt currently work
-bind -x '"\M-t":trasher -f'
+# bind -x '"\M-t":trasher -f'
 
 # zellij quickbinds
-alias za="zellij attach"              # attachs most recent session
-alias zls="zellij ls"                 # lists all sessions
-alias zd="zellij delete-all-sessions" # deletes all sessions
-alias zs="zellij -s"                  # creates a session - type name after
+# alias za="zellij attach"              # attachs most recent session
+# alias zls="zellij ls"                 # lists all sessions
+# alias zd="zellij delete-all-sessions" # deletes all sessions
+# alias zs="zellij -s"                  # creates a session - type name after
 
 # necessary for trasher to work, with autocomplete
 eval "$(register-python-argcomplete trasher)"

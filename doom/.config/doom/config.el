@@ -59,6 +59,20 @@
 
 (setq display-line-numbers-type 'relative)
 
+;; TRANSPARENCY ---------------------------------------------------------------- ;;
+
+(defun kb/toggle-transparency ()
+  "Toggle between opaque and 85% transparent."
+  (interactive)
+  (set-frame-parameter nil 'alpha-background
+                       (if (eq (frame-parameter nil 'alpha-background) 100)
+                           85
+                         100)))
+
+(map! :leader
+      :desc "Toggle transparency"
+      "t t" #'kb/toggle-transparency)
+
 ;; --------------------------------------------------------------------------- ;;
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an

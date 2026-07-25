@@ -17,8 +17,8 @@ hl.config({
 
     sensitivity = 0,  -- -1.0 - 1.0, 0 means no modification.
 
-    repeat_rate = 28,
-    repeat_delay = 300,
+    repeat_rate = 30,
+    repeat_delay = 260,
 
     touchpad = {
       natural_scroll = false,

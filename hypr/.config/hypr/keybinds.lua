@@ -70,18 +70,18 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + " .. key,
             hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. key,
-            hl.dsp.window.move({ workspace = i, silent = true }))
+            hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 -- special workspaces
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic", silent = true }))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
 
 -- hl.bind(mainMod .. " + ALT + F", hl.dsp.workspace.toggle_special("extra"))
--- hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.move({ workspace = "special:extra", silent = true }))
+-- hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.move({ workspace = "special:extra", follow = false }))
 
 -- move to normal workspace
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "e+0", silent = true }))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "e+0", follow = false }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

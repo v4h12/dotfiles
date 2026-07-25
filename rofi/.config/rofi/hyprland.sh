@@ -23,13 +23,14 @@ CHOICE=$(
     -theme ~/.config/rofi/config.rasi
 )
 
-# if [ -n "$CHOICE" ]; then
-#     kitty -e nvim "$CHOICE"
-# fi
-
 if [ -n "$CHOICE" ]; then
     if tmux list-sessions &>/dev/null; then
-        tmux send-keys -t sesh "nvim '$CHOICE'" Enter
+        SESSION=$(
+            tmux list-sessions -F "#{session_name}" |
+            rofi -dmenu -p "Select Session" \
+            -theme ~/.config/rofi/config.rasi
+        )
+        [ -n "$SESSION" ] && tmux send-keys -t "$SESSION" "nvim '$CHOICE'" Enter
     else
         kitty -e nvim "$CHOICE"
     fi

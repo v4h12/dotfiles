@@ -12,12 +12,9 @@
 /* Main Window - Top-Sticking, Transparent with subtle border */
 window#waybar {
   /* background: linear-gradient(to bottom, rgba(8, 8, 8, 0.95), rgba(8, 8, 8, 0.8)); */
-  background: rgba(0, 0, 0, 0.98);
+  background: rgba(0, 0, 0, 1.0);
   padding: 0 4px;
   margin: 0;
-  /* border: 1px solid rgba(59, 59, 59, 0.3); */
-  border-bottom: 1px solid rgba(59, 59, 59, 0.3); 
-  /* border-bottom: 1px solid rgba(232, 229, 204, 0.70); */
   box-shadow: none;
 }
 
@@ -50,6 +47,29 @@ window#waybar {
     color: rgba(160, 160, 160, 0.8);
     font-size: 14px;
     letter-spacing: 2px;
+}
+
+/* Music Module */
+#custom-music {
+    background: transparent;
+    padding: 0 6px;
+    margin: 0;
+    min-width: 8px;
+    color: rgba(228, 247, 225, 0.60);
+    transition: all 0.2s ease;
+}
+
+#custom-music.playing {
+    color: rgba(228, 247, 225, 1.0);
+}
+
+#custom-music.paused {
+    color: rgba(228, 247, 225, 0.40);
+    font-style: italic;
+}
+
+#custom-music.stopped {
+    color: rgba(228, 247, 225, 0.25);
 }
 
 /* Unified Module Container - Left */
@@ -98,7 +118,7 @@ window#waybar {
 
 /* Workspaces - Active button stands out more */
 #workspaces button {
-  background: transparent;
+  background: #2a2a2a;
   color: rgba(160, 160, 160, 0.8);
   font-weight: normal;
   padding: 0 4px;
@@ -106,10 +126,10 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: #ffffff;
-  background: none;
+  /* color: #ffffff; */
+  background: #1f1f1f;
   border: none;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 /* Module States - Text emphasis only */
