@@ -45,6 +45,29 @@ window#waybar {
     letter-spacing: 2px;
 }
 
+/* Music Module */
+#custom-music {
+    background: transparent;
+    padding: 0 6px;
+    margin: 0;
+    min-width: 8px;
+    color: rgba(228, 247, 225, 0.60);
+    transition: all 0.2s ease;
+}
+
+#custom-music.playing {
+    color: rgba(228, 247, 225, 0.75);
+}
+
+#custom-music.paused {
+    color: rgba(228, 247, 225, 0.40);
+    font-style: italic;
+}
+
+#custom-music.stopped {
+    color: rgba(228, 247, 225, 0.25);
+}
+
 /* Unified Module Container - Left (Transparent) */
 #custom-launcher, #workspaces {
   background: transparent;

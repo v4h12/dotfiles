@@ -54,4 +54,17 @@
 ;; (unpin! t)
 
 
-; (package! gruber-darker-theme :recipe (:host github :repo "rexim/gruber-darker-theme"))
+;; tsoding theme
+(package! gruber-darker-theme :recipe (:host github :repo "rexim/gruber-darker-theme"))
+
+;; epub reader (i think)
+(package! nov)
+(package! visual-fill-column)
+
+;; lua lsp
+(package! lua-mode)
+
+;; linter
+(package! lazy-ruff)
+
+(package! ghostel)

@@ -74,8 +74,8 @@ if [ -n "$chosen" ]; then
 
   "Holtee")
     STYLE="holtee-style.css"
-    ROFI_STYLE="default"
-    SWAYNC_STYLE="dark-style.css"
+    ROFI_STYLE="holtee"
+    SWAYNC_STYLE="holtee.css"
     ;;
 
   "Greish")

@@ -1,13 +1,13 @@
 /* Light theme for SwayNC, based on light.rasi */
 :root {
-  --kanagawa-bg: #f9fafb;
+  --kanagawa-bg: #E2E3E5;
   --kanagawa-bg-alt: #f3f4f6;
   --kanagawa-bg-hover: #e5e7eb;
   --kanagawa-bg-darker: #f9fafb;
   --kanagawa-text-primary: #1f2937;
   --kanagawa-text-secondary: #4b5563;
   --kanagawa-text-disabled: #6b7280;
-  --kanagawa-accent: #2563eb;
+  --kanagawa-accent: #6465F9;
   --kanagawa-accent-alt: #d97706;
   --kanagawa-accent-active: #9333ea;
   --kanagawa-border: #9ca3af;

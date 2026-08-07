@@ -28,10 +28,16 @@ hl.config({
 
 })
 
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace",
+})
+
 -- hl.gesture({
 --     fingers = 3,
---     direction = "horizontal",
---     action = "workspace"
+--     direction = "vertical",
+--     action = "layout scrolling"
 -- })
 
 -- Example per-device config

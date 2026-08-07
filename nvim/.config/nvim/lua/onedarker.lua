@@ -22,7 +22,7 @@ onedark.setup({
     StatusLineNC = { bg = "none" },
     VertSplit = { bg = "none" },
     WinSeparator = { bg = "none" },
-    FloatBorder = { fg = "#5c6370", bg = "none" },
+    FloatBorder = { fg = "#928374", bg = "none" },
   },
 })
 

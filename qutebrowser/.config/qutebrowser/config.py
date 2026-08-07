@@ -109,6 +109,7 @@ c.auto_save.session = True  # save tabs on quit/restart
 config.bind("J", "tab-prev")
 config.bind("K", "tab-next")
 config.bind(",m", 'spawn --detach mpv {url}')
+config.bind(",n", 'spawn --detach mpv --no-video {url}')
 config.bind("=", "cmd-set-text -s :open")
 config.bind("re", "reload")
 config.bind("<Mod1-h>", "history")
@@ -155,6 +156,8 @@ config.set("content.geolocation", False)
 config.set("content.webrtc_ip_handling_policy", "default-public-interface-only")
 config.set("content.cookies.accept", "all")
 config.set("content.cookies.store", True)
+config.set("content.notifications.enabled", False)
+c.content.javascript.can_open_tabs_automatically = False
 
 config.set(
     "content.headers.user_agent",
@@ -163,16 +166,28 @@ config.set(
 )
 
 # Adblocking
+# Network-request blocking only; qutebrowser has no cosmetic/element hiding.
+# The uAssets lists are uBO-only and mostly useless here, so we use ABP-style
+# lists instead (AdGuard's annoyances list handles cookie banners + popups).
 # False for youtube so it isnt blocked, refer to yt-ad skip
 config.set("content.blocking.enabled", False, "https://*.youtube.com/*")
 
 c.content.blocking.method = 'both'
+c.content.blocking.hosts.block_subdomains = True
 c.content.blocking.adblock.lists = [
     "https://easylist.to/easylist/easylist.txt",
     "https://easylist.to/easylist/easyprivacy.txt",
     "https://easylist.to/easylist/fanboy-annoyance.txt",
     "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
-    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
-    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
-    "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt",
+    "https://secure.fanboy.co.nz/fanboy-social.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/2.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/3.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/4.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/11.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/14.txt",
+    "https://filters.adtidy.org/extension/ublock/filters/17.txt",
+]
+c.content.blocking.hosts.lists = [
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+    "https://blocklistproject.github.io/Lists/ads.txt",
 ]

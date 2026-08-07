@@ -41,9 +41,12 @@ map("n", "<C-j>", "<C-w>j", { desc = "Move to lower split" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to upper split" })
 
 -- buffers
-map("n", "<leader>bl", "<cmd>bnext<cr>",     { desc = "Next buffer" })
-map("n", "<leader>bh", "<cmd>bprev<cr>",     { desc = "Prev buffer" })
-map("n", "<leader>bc", "<cmd>bdelete<cr>",   { desc = "Delete buffer" })
+-- map("n", "<leader>bl", "<cmd>bnext<cr>",     { desc = "Next buffer" })
+-- map("n", "<leader>bh", "<cmd>bprev<cr>",     { desc = "Prev buffer" })
+-- map("n", "<leader>bc", "<cmd>bdelete<cr>",   { desc = "Delete buffer" })
+map("n", "<leader>b", function()
+  require("buffer_manager.ui").toggle_quick_menu()
+end, { desc = "Buffer manager" })
 
 -- LSP (these only work when LSP is attached to a file)
 map("n", "<leader>ca", vim.lsp.buf.code_action,  { desc = "Code action" })
@@ -68,6 +71,9 @@ vim.lsp.enable({ "pyright", "bashls", "luals" })
 -- Built-in completion 
 vim.opt.completeopt = "menu,menuone,noselect,popup"
 
+-- Global border for floating windows
+vim.o.winborder = "single"
+
 -- Plugins
 vim.pack.add({
   { src = "https://github.com/navarasu/onedark.nvim" },
@@ -77,20 +83,17 @@ vim.pack.add({
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-lualine/lualine.nvim"},
-  -- { src = "https://github.com/VonHeikemen/fine-cmdline.nvim" },
-  -- { src = "https://github.com/MunifTanjim/nui.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/j-morano/buffer_manager.nvim"},
 })
 
--- Colorscheme
+-- Colorschemes
 require("onedarker")
 -- require("kanagawar")
 
 -- require setups for vim.pack
 require("which-key").setup()
 require("nvim-autopairs").setup()
+require("buffer_manager").setup()
 require("evil_lualine")
-
--- cmd line customised
--- require("finer_cmdline")
--- vim.keymap.set("n", ":", "<cmd>FineCmdline<cr>", { noremap = true })
 

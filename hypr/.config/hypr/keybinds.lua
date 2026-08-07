@@ -9,6 +9,15 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 
+-- test for different layouts, forget about it
+-- local layouts = { "dwindle", "master", "scrolling" }
+-- local layout_idx = 1
+
+-- hl.bind(mainMod .. " + Tab", function()
+--     layout_idx = layout_idx % #layouts + 1
+--     hl.dsp.layout(layouts[layout_idx])
+-- end)
+
 -- this creates a single instance of a kitty server, any terminals after this load fast
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("kitty -1"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("foot"))
@@ -24,7 +33,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("./.librepods-x86_64.AppImage"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun || pkill rofi"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/rofi/wallpaper-switcher.sh"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("kitty -e yazi"))
+-- hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("kitty -e yazi"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("qutebrowser"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -43,6 +52,16 @@ hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/.config/hypr/scripts/s
 hl.bind(mainMod .. " + SHIFT + Escape", hl.dsp.exit())
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
+
+-- toggle gaps
+hl.bind(mainMod .. " + ALT + T", function()
+    local gaps = hl.get_config("general.gaps_out")
+    if gaps.top == 0 then
+        hl.config({ general = { gaps_in = 3, gaps_out = 6 } })
+    else
+        hl.config({ general = { gaps_in = 0, gaps_out = 0 } })
+    end
+end)
 
 -- screenshot to text tool
 local OCR4Linux = "~/.config/OCR4Linux/OCR4Linux.sh"

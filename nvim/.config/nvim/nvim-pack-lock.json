@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "buffer_manager.nvim": {
+      "rev": "a0ac2db39c8bd4a2b6ca897f38c88770f90d9323",
+      "src": "https://github.com/j-morano/buffer_manager.nvim"
+    },
     "fine-cmdline.nvim": {
       "rev": "6e646f4da6afe856e36f3d952489b723d1475638",
       "src": "https://github.com/VonHeikemen/fine-cmdline.nvim"
@@ -35,6 +39,10 @@
     "onedark.nvim": {
       "rev": "df4792accde9db0043121f32628bcf8e645d9aea",
       "src": "https://github.com/navarasu/onedark.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

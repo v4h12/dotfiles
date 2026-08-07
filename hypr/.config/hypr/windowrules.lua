@@ -8,6 +8,8 @@
 
 -- "Smart gaps" / "No gaps when only"
 
+
+
 -- start kitty faster
 hl.window_rule({
     name = "windowrule-1",
@@ -15,7 +17,25 @@ hl.window_rule({
     match = { class = "HeadlessKitty" },
 })
 
--- Ignore maximize requests from apps. You'll probably like this.
+hl.window_rule({
+    name = "pin-browser",
+    workspace = "1",
+    match = { class = "qutebrowser"  },
+})
+
+hl.window_rule({
+    name = "pin-emacs",
+    workspace = "2",
+    match = { class = "emacs"  },
+
+})
+hl.window_rule({
+    name = "pin-term",
+    workspace = "3",
+    match = { class = "kitty -1"  },
+})
+
+-- ignore maximise requests
 hl.window_rule({
     name = "windowrule-2",
     suppress_event = "maximize",

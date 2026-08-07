@@ -10,10 +10,11 @@
 
 /* Main Window - Top-Sticking, Light with subtle border */
 window#waybar {
-  background: linear-gradient(to bottom, rgba(245, 245, 245, 0.95), rgba(235, 235, 235, 0.9));
+  /* background: linear-gradient(to bottom, rgba(245, 245, 245, 0.95), rgba(235, 235, 235, 0.9)); */
+  background: #E2E3E5;
   padding: 0 4px;
   margin: 0;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  /* border-bottom: 1px solid rgba(100, 100, 100, 0.3); */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -73,6 +74,32 @@ window#waybar {
   min-width: 6px;
 }
 
+/* Music Module */
+#custom-music {
+    background: transparent;
+    padding: 0 6px;
+    margin: 0;
+    min-width: 8px;
+    color:#2a2a2a;
+    /* color: rgba(228, 247, 225, 0.60); */
+    transition: all 0.2s ease;
+}
+
+#custom-music.playing {
+    /* color: rgba(228, 247, 225, 0.75); */
+    color:#2a2a2a;
+}
+
+#custom-music.paused {
+    /* color: rgba(228, 247, 225, 0.40); */
+    color:#2a2a2a;
+    font-style: italic;
+}
+
+#custom-music.stopped {
+    color: rgba(228, 247, 225, 0.25);
+}
+
 #clock {
   font-weight: bold;
 }
@@ -127,9 +154,8 @@ window#waybar {
 
 /* Tooltip - Light theme */
 tooltip {
-  background: rgba(255, 255, 255, 0.98);
+    background: #E2E3E5;
   border: 1px solid rgba(100, 100, 100, 0.3);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   color: #2a2a2a;
   padding: 5px 8px;
 }

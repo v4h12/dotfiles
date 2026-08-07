@@ -14,7 +14,18 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 
-(setq doom-theme 'doom-material-dark)
+;; (setq doom-theme 'doom-material-dark)
+;; (setq doom-theme 'doom-1337)
+;; (setq doom-theme 'doom-molokai)
+;; (setq doom-theme 'doom-homage-black)
+;; (setq doom-theme 'doom-opera)
+(setq doom-theme 'doom-badger)
+;; (setq doom-theme 'doom-sourcerer)
+;; (setq doom-theme 'doom-tomorrow-night)
+;; (setq doom-theme 'doom-monokai-spectrum)
+;; (setq doom-theme 'doom-gruvbox)
+;; (setq doom-theme 'doom-earl-grey)
+;; (setq load-theme 'tsdh-dark)
 
 ;; ----------------------------------------------------------------------------- ;;
 
@@ -27,6 +38,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+(setq org-roam-directory "~/org/")
 
 ;; Syntax highlighting in org source blocks
 (setq org-src-fontify-natively t)
@@ -40,38 +52,59 @@
 
 ;; CONFIGS -------------------------------------------------------------------- ;;
 
-;; (defun my/toggle-vterm ()
-  ;; "Toggle a vterm popup buffer named *vterm*."
-  ;; (interactive)
-  ;; (if (get-buffer "*vterm*")
-  ;;     (if (get-buffer-window "*vterm*")
-  ;;         (delete-window (get-buffer-window "*vterm*"))
-  ;;       (pop-to-buffer "*vterm*"))
-    ;; (vterm "*vterm*")))
-
-;; Keybinding to toggle terminal with leader key
-;; (map! :leader
-;;       :desc "Toggle terminal"
-;;       "t t" #'my/toggle-vterm)
-
-;; (after! gdscript
-;;   (setq gdscript-executable-path "/usr/bin/godot"))
-
+;; relative line-numbers
 (setq display-line-numbers-type 'relative)
-
-;; TRANSPARENCY ---------------------------------------------------------------- ;;
 
 (defun kb/toggle-transparency ()
   "Toggle between opaque and 85% transparent."
   (interactive)
   (set-frame-parameter nil 'alpha-background
                        (if (eq (frame-parameter nil 'alpha-background) 100)
-                           85
+                           92
                          100)))
-
 (map! :leader
       :desc "Toggle transparency"
       "t t" #'kb/toggle-transparency)
+
+;; epub reader bec emacs
+(use-package! nov
+  :mode ("\\.epub\\'" . nov-mode)
+  :config
+  (setq nov-text-width 80)
+
+  (defun my/nov-setup ()
+    (visual-line-mode 1)
+    (visual-fill-column-mode 1)
+    (setq visual-fill-column-width 80
+          visual-fill-column-center-text t))
+
+  (add-hook 'nov-mode-hook 'my/nov-setup))
+
+;; adds jsonc to json
+(add-to-list 'auto-mode-alist '("\\.jsonc\\'" . json-mode))
+
+;; treesitter
+(setq treesit-language-source-alist
+  '((lua "https://github.com/tree-sitter-grammars/tree-sitter-lua")
+    (python "https://github.com/tree-sitter/tree-sitter-python")))
+
+(after! eglot
+  (add-to-list 'eglot-server-programs '(python-mode . ("ruff" "server"))))
+
+;; for hyprland config - not working
+(after! eglot
+  (add-to-list 'eglot-server-programs
+    '(lua-ts-mode . ("lua-language-server"
+                     :initializationOptions
+                     (:settings
+                      (:workspace.library ["/usr/share/hypr/stubs/"]))))))
+
+
+(use-package lazy-ruff
+  :ensure t
+  :bind (("C-c f" . lazy-ruff-lint-format-dwim)) ;; keybinding
+  :config
+  (lazy-ruff-global-mode t)) ;; Enable the lazy-ruff minor mode globally
 
 ;; --------------------------------------------------------------------------- ;;
 
@@ -105,4 +138,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
