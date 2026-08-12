@@ -1,1 +1,0 @@
-{"rustc":4758242423518056681,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[11478983585537595838,"build_script_build",false,7671501953307027624]],"local":[{"RerunIfChanged":{"output":"wasm32-wasip1/release/build/crossbeam-epoch-bb5da5bec6ebcdce/output","paths":["no_atomic.rs"]}}],"rustflags":[],"config":0,"compile_kind":0}

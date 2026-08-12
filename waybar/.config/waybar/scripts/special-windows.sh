@@ -19,7 +19,7 @@ windows=$(hyprctl clients -j | jq -r '
 get_icon() {
   case "$1" in
   foot | kitty | alacritty) echo "󰆍" ;;
-  firefox | Firefox) echo "󰈹" ;;
+  firefox | Firefox | zen | Zen\ Browser) echo "󰈹" ;;
   chromium | chrome | brave) echo "󰊯" ;;
   qutebrowser | Qutebrowser | org.qutebrowser.qutebrowser) echo " " ;;
   zathura | Zathura | org.pwmt.zathura | okular | evince) echo "" ;;
@@ -36,6 +36,7 @@ get_icon() {
   yazi) echo "" ;;
   rmpc) echo "󰲹" ;;
   LibrePods) echo "󱡏" ;;
+  mpv) echo "󰿏" ;;
   *) echo "" ;;
   esac
 }

@@ -21,6 +21,8 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- this creates a single instance of a kitty server, any terminals after this load fast
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("kitty -1"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("foot"))
+-- dropdown terminal (Super+`): spawn once, then toggle scratchpad
+hl.bind(mainMod .. " + Grave", hl.dsp.exec_cmd("bash -c 'hyprctl clients -j | grep -q kitty-dropdown || kitty -1 --class kitty-dropdown; sleep 0.35; hyprctl dispatch togglespecialworkspace dropdown'"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("emacsclient -c -a 'emacs'"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("mailspring"))

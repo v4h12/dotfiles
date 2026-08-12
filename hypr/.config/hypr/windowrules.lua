@@ -221,3 +221,13 @@ hl.window_rule({
     match = { class = "^(com.github.johnfactotum.Foliate)$" },
 })
 -- hl.window_rule({ name = "foliate-blur", blur = true, match = { class = "^(com.github.johnfactotum.Foliate)$" } })
+
+-- dropdown terminal (Super+`): top-anchored scratchpad
+hl.window_rule({
+    name = "dropdown-term",
+    workspace = "special:dropdown silent",
+    float = true,
+    size = "90% 55%",
+    move = "5% 0",
+    match = { class = "^(kitty-dropdown)$" },
+})

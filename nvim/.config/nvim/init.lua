@@ -27,6 +27,7 @@ vim.g.mapleader = " "        -- space as leader key
 map("v", "<", "<gv", { desc = "Indent left" })
 map("v", ">", ">gv", { desc = "Indent right" })
 map("n", "<leader>e", "<cmd>Ex<cr>", { desc = "NetRW" })
+map("n", "<leader>o", "<cmd>Neotree toggle<cr>", { desc = "Neotree" })
 map("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move selection down" })
 map("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move selection up" })
 map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
@@ -84,7 +85,10 @@ vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-lualine/lualine.nvim"},
   { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/MunifTanjim/nui.nvim" },
   { src = "https://github.com/j-morano/buffer_manager.nvim"},
+  { src = "https://github.com/nvim-tree/nvim-web-devicons"},
+  { src = "https://github.com/nvim-neo-tree/neo-tree.nvim"},
 })
 
 -- Colorschemes
@@ -92,6 +96,7 @@ require("onedarker")
 -- require("kanagawar")
 
 -- require setups for vim.pack
+require("neo-tree").setup({})
 require("which-key").setup()
 require("nvim-autopairs").setup()
 require("buffer_manager").setup()
