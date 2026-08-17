@@ -10,16 +10,21 @@
 
 ;; THEME ----------------------------------------------------------------------- ;;
 
+;; look at /usr/share/applications for emacs launching client for vanilla emacs
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 
-;; (setq doom-theme 'doom-material-dark)
+(add-to-list 'custom-theme-load-path "~/.config/doom/")
+(setq doom-theme 'doom-greish-dark)
+
+(setq-default cursor-type '(bar . 2))
 ;; (setq doom-theme 'doom-1337)
 ;; (setq doom-theme 'doom-molokai)
 ;; (setq doom-theme 'doom-homage-black)
 ;; (setq doom-theme 'doom-opera)
-(setq doom-theme 'doom-badger)
+;; (setq doom-theme 'doom-badger)
 ;; (setq doom-theme 'doom-sourcerer)
 ;; (setq doom-theme 'doom-tomorrow-night)
 ;; (setq doom-theme 'doom-monokai-spectrum)
@@ -89,7 +94,9 @@
     (python "https://github.com/tree-sitter/tree-sitter-python")))
 
 (after! eglot
-  (add-to-list 'eglot-server-programs '(python-mode . ("ruff" "server"))))
+  (setq eglot-server-programs (assq-delete-all 'python-mode eglot-server-programs))
+  (push '(python-mode . ("pyright-langserver" "--stdio")) eglot-server-programs)
+  (push '(python-ts-mode . ("pyright-langserver" "--stdio")) eglot-server-programs))
 
 ;; for hyprland config - not working
 (after! eglot
@@ -102,9 +109,10 @@
 
 (use-package lazy-ruff
   :ensure t
-  :bind (("C-c f" . lazy-ruff-lint-format-dwim)) ;; keybinding
+  :bind (("C-c f" . lazy-ruff-lint-format-dwim) ;; format+lint on demand
+         ("C-c r" . lazy-ruff-mode))            ;; toggle ruff for this buffer
   :config
-  (lazy-ruff-global-mode t)) ;; Enable the lazy-ruff minor mode globally
+  nil)
 
 ;; --------------------------------------------------------------------------- ;;
 

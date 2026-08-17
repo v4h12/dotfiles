@@ -1,1 +1,79 @@
-dotfiles/starship/starship.toml
+add_newline = false
+scan_timeout = 500
+
+format = """
+[┌──\\(](bold white)$username[@](grey)$hostname[\\)-\\[](bold white)$directory[\\]](bold white)$git_branch$git_status$python
+└─$character"""
+
+[character]
+success_symbol = "[\\$](blue)"
+error_symbol = "[\\$](red)"
+
+[username]
+show_always = true
+format = "$user"
+style_user = "grey"
+style_root = "bold red"
+
+[hostname]
+ssh_only = false
+style = "grey"
+format = "[$hostname]($style)"
+
+[directory]
+format = "[$path]($style)"
+style = "blue"
+truncation_length = 4
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+format = '-[\[](bold white)[ $branch]($style)[\]](bold white)'
+style = "bold grey"
+
+[git_status]
+format = '[\[](bold red)[$all_status$ahead_behind]($style)[\]](bold red)'
+style = "bold red"
+conflicted = ""
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+min_time = 2_000
+format = " took [$duration](bold yellow)"
+
+[package]
+symbol = ""
+format = " [$symbol$version]($style)"
+style = "dim cyan"
+
+[nodejs]
+symbol = "󰎙 "
+format = " [$symbol($version)]($style)"
+style = "bold yellow"
+
+[python]
+format = ' [${symbol} ${virtualenv}]($style)'
+symbol = ">>>"
+style = "bold green"
+
+[rust]
+symbol = ""
+format = " [$symbol($version)]($style)"
+style = "bold orange"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"

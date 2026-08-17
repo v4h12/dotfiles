@@ -91,6 +91,8 @@ c.url.searchengines = {
     "!apkg": "https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=",
     "!gh": "https://github.com/search?o=desc&q={}&s=stars",
     "!yt": "https://www.youtube.com/results?search_query={}",
+    "!py": "https://docs.python.org/3/search.html?q={}",
+    "!pip": "https://pypi.org/search/?q={}"
 }
 
 c.completion.open_categories = [

@@ -1,0 +1,244 @@
+
+/* Gruvbox Dark - Retro Terminal Waybar */
+/* Palette:
+   bg0: #282828  bg1: #3c3836  bg2: #504945  bg3: #665c54  bg4: #7c6f64
+   fg:  #ebdbb2  fg0: #fbf1c7 fg1: #ebdbb2 fg2: #d5c4a1 fg3: #bdae93 fg4: #a89984
+   gray: #928374
+   red: #cc241d  green: #98971a  yellow: #d79921  blue: #458588
+   purple: #b16286  aqua: #689d6a  orange: #d65d0e
+   bright_red: #fb4934  bright_green: #b8bb26  bright_yellow: #fabd2f
+   bright_blue: #83a598  bright_purple: #d3869b  bright_aqua: #8ec07c  bright_orange: #fe8019
+*/
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 11px;
+  min-height: 0;
+  color: #a89984;
+}
+
+window#waybar {
+  background: #282828;
+  padding: 0 4px;
+  margin: 0;
+}
+
+/* Special Workspace */
+#custom-special-workspace {
+  padding: 0 5px;
+  margin: 0;
+  margin-left: -8px;
+  color: #928374;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+#custom-special-workspace.empty {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#custom-special-workspace.occupied {
+  padding: 0 5px;
+  color: #b8bb26;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* Left modules container */
+#custom-launcher, #workspaces {
+  background: transparent;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Right modules container */
+#right-modules {
+  background: #3c3836;
+  padding: 4px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border: 1px solid #504945;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* All module bases */
+#clock, #cpu, #memory, #battery, #wireplumber, #network, #backlight,
+#bluetooth, #custom-weather, #custom-gammastep, #idle_inhibitor, #tray {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 6px;
+}
+
+/* Clock - bright fg, the main focal point */
+#clock {
+  font-weight: bold;
+  color: #fbf1c7;
+  background: #504945;
+  padding: 1px 8px;
+  margin: 0 4px;
+}
+
+/* === Module Boxes - workspace-style filled boxes with colored bottom accent === */
+
+/* Battery - yellow */
+#battery {
+  background: #3c3836;
+  color: #a89984;
+  border: 1px solid transparent;
+  border-bottom: 2px solid #d79921;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#battery.warning {
+  border-bottom-color: #fabd2f;
+  color: #fabd2f;
+}
+
+#battery.critical:not(.charging) {
+  border-bottom-color: #fb4934;
+  color: #fb4934;
+}
+
+#battery.charging {
+  border-bottom-color: #b8bb26;
+  color: #b8bb26;
+}
+
+/* CPU - red */
+#cpu {
+  background: #3c3836;
+  color: #a89984;
+  border: 1px solid transparent;
+  border-bottom: 2px solid #cc241d;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#cpu.warning {
+  border-bottom-color: #fabd2f;
+  color: #fabd2f;
+}
+
+#cpu.critical {
+  border-bottom-color: #fb4934;
+  color: #fb4934;
+}
+
+/* Memory - aqua */
+#memory {
+  background: #3c3836;
+  color: #a89984;
+  border: 1px solid transparent;
+  border-bottom: 2px solid #689d6a;
+  padding: 0 4px;
+  margin: 0 1px;
+}
+
+#memory.warning {
+  border-bottom-color: #fabd2f;
+  color: #fabd2f;
+}
+
+#memory.critical {
+  border-bottom-color: #fb4934;
+  color: #fb4934;
+}
+
+/* === Workspaces === */
+#workspaces button {
+  background: #3c3836;
+  color: #a89984;
+  font-weight: normal;
+  padding: 0 4px;
+  margin: 0 1px;
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+  background: #504945;
+  color: #fabd2f;
+  font-weight: bold;
+  border-bottom: 2px solid #fabd2f;
+}
+
+#workspaces button:hover {
+  background: #504945;
+  color: #ebdbb2;
+}
+
+/* === Music Module === */
+#custom-music {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  min-width: 8px;
+  color: #ebdbb2;
+  transition: all 0.2s ease;
+}
+
+#custom-music.playing {
+  color: #689d6a;
+}
+
+#custom-music.paused {
+  color: #928374;
+  font-style: italic;
+}
+
+#custom-music.stopped {
+  color: #7c6f64;
+}
+
+/* === Other Module States === */
+#wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
+  color: #928374;
+  font-style: italic;
+}
+
+#idle_inhibitor.activated {
+  color: #b8bb26;
+}
+
+#custom-gammastep.activated {
+  color: #d65d0e;
+}
+
+/* Hover */
+#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+  background: transparent;
+  box-shadow: transparent;
+}
+
+/* Tray */
+#tray {
+  padding: 0 4px;
+  margin: 0;
+  border-left: 1px solid #504945;
+}
+
+/* Tooltip - retro terminal popup */
+tooltip label {
+  color: #ebdbb2;
+}
+
+tooltip {
+  background: #282828;
+  border: 2px solid #504945;
+  box-shadow: none;
+  color: #a89984;
+  padding: 4px 8px;
+}
