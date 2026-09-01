@@ -1,8 +1,13 @@
-;; FONT ------------------------------------------------------------------------ ;;
+;;; package --- not a package
+
+;;; Commentary: where shit gets done?
+
+;;; Config.el  ------------------------------------------------------------------------ ;;
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 
+;;; Code:
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
       doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
       doom-symbol-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
@@ -42,6 +47,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
+
 (setq org-directory "~/org/")
 (setq org-roam-directory "~/org/")
 
@@ -56,6 +62,20 @@
 (setq org-src-preserve-indentation t)
 
 ;; CONFIGS -------------------------------------------------------------------- ;;
+
+;; Evil-mode config
+;; Make movement keys work like they should
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+
+; Make horizontal movement cross lines
+;; (after! evil)
+;;     (setq evil-respect-visual-line-mode t)
+
+;; (after! evil)
+;;     (add-hook 'org-mode-hook #'visual-line-mode)
 
 ;; relative line-numbers
 (setq display-line-numbers-type 'relative)

@@ -13,6 +13,7 @@ alias ls='eza -l --color=always --group-directories-first --hyperlink auto'
 # alias cdl='cd {} && ls'
 alias la='eza --color=always -T --hyperlink'
 alias weather='curl wttr.in/Port+Elizabeth'
+alias dot='cd ~/dotfiles && ls'
 alias uplog='cat /var/log/pacman.log | less'
 alias icat='kitten icat'
 alias space='df -h | grep -A1 Filesystem'
@@ -30,7 +31,7 @@ alias usb='cd /run/media/v4h'
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
 alias godot="cd Coding/packages/godot && ./Godot_v4.6.1-stable_linux.x86_64"
-alias mpv='mpv --profile=norm'
+# alias mpv='mpv --profile=norm'
 alias ytpl="mpv --no-video "https://www.youtube.com/playlist?list=PLiaJXFKh9MTtuempS8M0MHA7wpiToulgb""
 alias ytp="mpv --no-video"
 alias venv="source venv/bin/activate"

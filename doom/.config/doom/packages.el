@@ -60,8 +60,9 @@
 ;; epub reader (i think)
 (package! nov)
 (package! visual-fill-column)
+; (package! writegood-mode)
 
-;; lua lsp
+;; lsp
 (package! lua-mode)
 
 ;; linter
