@@ -5,13 +5,15 @@
   font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
   font-size: 11px;
   min-height: 0;
-  color: #d4a574; /* warm copper/bronze as default */
+  /* color: #d4a574;  */
+  /* color: #5C6370; */ /* grey-blue */
+  color: #705847;
 }
 
 /* Main Window - Dark with warm copper accent */
 window#waybar {
   /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.50), rgba(161, 143, 94, 0.85)); */
-  background: #0e1415;
+  background: #171715;
   padding: 0 4px;
   margin: 0;
   /* border-bottom: 1px solid rgba(180, 120, 70, 0.3); */
@@ -22,7 +24,8 @@ window#waybar {
     padding: 0 5px;
     margin: 0;
     margin-left: -8px;
-    color: rgba(180, 130, 80, 0.7);
+    /* color: rgba(180, 130, 80, 0.7); */
+    color: #554135;
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -35,7 +38,7 @@ window#waybar {
 
 #custom-special-workspace.occupied {
     padding: 0 5px;
-    color: rgba(180, 130, 80, 0.7);
+    color: #2C3029;
     font-size: 14px;
     letter-spacing: 2px;
 }
@@ -49,6 +52,29 @@ window#waybar {
   margin-left: 2px;
   box-shadow: none;
   transition: all 0.3s ease-in-out;
+}
+
+/* Music Module */
+#custom-music {
+    background: transparent;
+    padding: 0 6px;
+    margin: 0;
+    min-width: 8px;
+    color: #705847;
+    transition: all 0.2s ease;
+}
+
+#custom-music.playing {
+    color: #705847;
+}
+
+#custom-music.paused {
+    color: #2C3029;
+    font-style: italic;
+}
+
+#custom-music.stopped {
+    color: #2C3029;
 }
 
 /* Unified Module Container - Right */
@@ -73,15 +99,16 @@ window#waybar {
 
 #clock {
   font-weight: bold;
-  color: #d4a574;
+  /* color: #d4a574; */
+  color: #705847;
 }
 
-/* Hover Effect - Warm copper glow */
-#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
-  background: linear-gradient(to bottom, rgba(100, 100, 100, 0.95), rgba(130, 130, 130, 0.85));
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(180, 100, 50, 0.4);
-  margin-bottom: 3px;
-}
+/* /\* Hover Effect - Warm copper glow *\/ */
+/* #custom-launcher:hover, #workspaces:hover, .right-modules:hover { */
+/*   /\* background: linear-gradient(to bottom, rgba(100, 100, 100, 0.95), rgba(130, 130, 130, 0.85)); *\/ */
+/*   /\* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(180, 100, 50, 0.4); *\/ */
+/*   margin-bottom: 3px; */
+/* } */
 
 /* Workspaces - Circuit board inspired */
 #workspaces button {
@@ -103,10 +130,10 @@ window#waybar {
   font-weight: bold;
 }
 
-#workspaces button:hover {
-  color: #e8c89a;
-  background: rgba(50, 35, 22, 0.6);
-}
+/* #workspaces button:hover { */
+/*   color: #e8c89a; */
+/*   background: rgba(50, 35, 22, 0.6); */
+/* } */
 
 /* Module States - Copper/Bronze theme */
 #cpu.warning, #memory.warning, #battery.warning {
@@ -126,7 +153,8 @@ window#waybar {
 }
 
 #wireplumber.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off {
-  color: #6b5844;
+  /* color: #6b5844; */
+  color: #2C3029;
   font-style: italic;
 }
 
@@ -137,11 +165,8 @@ window#waybar {
 
 /* Tooltip - Vintage circuit aesthetic */
 tooltip {
-  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.40), rgba(161, 143, 94, 0.50)); */
-  background: #0e1415;
-  /* border: 1px solid rgba(180, 120, 70, 0.4); */
+  background: #171715;
   border: none;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(180, 100, 50, 0.15); */
   box-shadow: none;
   color: #d4a574;
   padding: 5px 8px;

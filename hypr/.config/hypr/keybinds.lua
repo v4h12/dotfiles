@@ -20,9 +20,9 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- this creates a single instance of a kitty server, any terminals after this load fast
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("kitty -1"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("kitty -e cliphist list -max-items 100 | fzf | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("foot"))
 -- dropdown terminal (Super+`): spawn once, then toggle scratchpad
-hl.bind(mainMod .. " + Grave", hl.dsp.exec_cmd("bash -c 'hyprctl clients -j | grep -q kitty-dropdown || kitty -1 --class kitty-dropdown; sleep 0.35; hyprctl dispatch togglespecialworkspace dropdown'"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("emacsclient -c -a 'emacs'"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("mailspring"))
@@ -41,8 +41,9 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("qutebrowser"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + ALT + P", hl.dsp.window.pin())
 hl.bind(mainMod .. " + ALT + V", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("ie-r"))
-hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("pkill ie-r"))
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-idle.sh"))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("ie-r"))
+hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd("pkill ie-r"))
 hl.bind(mainMod .. " + ALT + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("~/.config/rofi/hyprland.sh"))
 hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.exec_cmd("~/.config/rofi/emacs.sh"))

@@ -17,116 +17,113 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m[-------------------- HARDWARE --------------------]"
+      "format": "\u001b[38;5;244m\u2500\u2500 hardware\u001b[0m"
     },
     {
       "type": "host",
-      "key": " >  SYS//",
-      "keyColor": "white"
+      "key": " SYS",
+      "keyColor": "180"
     },
     {
       "type": "cpu",
-      "key": " >  CPU//",
-      "keyColor": "white"
+      "key": " CPU",
+      "keyColor": "180"
     },
     {
       "type": "gpu",
-      "key": " >  GPU//",
-      "keyColor": "white"
+      "key": " GPU",
+      "keyColor": "180"
     },
     {
       "type": "memory",
-      "key": " >  MEM//",
-      "keyColor": "white"
+      "key": " MEM",
+      "keyColor": "180"
     },
     {
       "type": "disk",
-      "key": " >  DSK//",
-      "keyColor": "white"
+      "key": " DSK",
+      "keyColor": "180"
     },
     {
-      "type": "custom",
-      "format": "\u001b[90m[--------------------------------------------------]"
+      "type": "display",
+      "key": " DSP",
+      "keyColor": "180"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m[-------------------- SOFTWARE --------------------]"
+      "format": "\u001b[38;5;244m\u2500\u2500 software\u001b[0m"
     },
     {
       "type": "os",
-      "key": " >  OS_//",
-      "keyColor": "white"
+      "key": " OS_",
+      "keyColor": "110"
     },
     {
       "type": "kernel",
-      "key": " >  KRN//",
-      "keyColor": "white"
+      "key": " KRN",
+      "keyColor": "110"
     },
     {
       "type": "packages",
-      "key": " >  PKG//",
-      "keyColor": "white"
+      "key": " PKG",
+      "keyColor": "110"
     },
     {
       "type": "shell",
-      "key": " >  SHL//",
-      "keyColor": "white"
+      "key": " SHL",
+      "keyColor": "110"
     },
     "break",
     {
+      "type": "custom",
+      "format": "\u001b[38;5;244m\u2500\u2500 userland\u001b[0m"
+    },
+    {
       "type": "de",
-      "key": " >  DE_//",
-      "keyColor": "white"
+      "key": " DE_",
+      "keyColor": "140"
     },
     {
       "type": "lm",
-      "key": " >  LM_//",
-      "keyColor": "white"
+      "key": " LM_",
+      "keyColor": "140"
     },
     {
       "type": "wm",
-      "key": " >  WM_//",
-      "keyColor": "white"
+      "key": " WM_",
+      "keyColor": "140"
     },
     {
       "type": "wmtheme",
-      "key": " >  THM//",
-      "keyColor": "white"
+      "key": " THM",
+      "keyColor": "140"
     },
     {
       "type": "terminal",
-      "key": " >  TTY//",
-      "keyColor": "white"
+      "key": " TTY",
+      "keyColor": "140"
     },
     {
-      "type": "custom",
-      "format": "\u001b[90m[-------------------------------------------------]"
+      "type": "terminalfont",
+      "key": " FNT",
+      "keyColor": "140"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m[---------------- RUNTIME_METRICS ----------------]"
+      "format": "\u001b[38;5;244m\u2500\u2500 runtime\u001b[0m"
     },
     {
       "type": "command",
-      "key": " >  AGE//",
-      "keyColor": "white",
-      "text": "birth_install-$(stat -c %W /); current-$(date +%s); time_progression-$((current - birth_install)); days_difference-$((time_progression / 86400)); echo $days_difference days"
+      "key": " AGE",
+      "keyColor": "114",
+      "text": "b=$(stat -c %W /); [ \"$b\" -gt 0 ] && printf '%d days\\n' \"$(( ($(date +%s)-b)/86400 ))\" || echo unavailable"
     },
     {
       "type": "uptime",
-      "key": " >  UP_//",
-      "keyColor": "white"
-    },
-    {
-      "type": "datetime",
-      "key": " >  DT_//",
-      "keyColor": "white"
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[90m[-------------------------------------------------]"
+      "key": " UP_",
+      "keyColor": "114"
     }
   ]
 }

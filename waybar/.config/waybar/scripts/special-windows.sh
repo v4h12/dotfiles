@@ -7,7 +7,7 @@ windows=$(hyprctl clients -j | jq -r '
   if .class == "kitty" then
     if .title | ascii_downcase | contains("yazi") then "yazi"
     elif .title | ascii_downcase | contains("rmpc") then "rmpc"
-    elif .title | ascii_downcase | contains("LibrePods") then "LibrePods"
+    elif .title | ascii_downcase | contains("LibrePods") then "󱡏 LibrePods"
     # elif .title | ascii_downcase | contains("Volume Control") then "Volume Control"
     else .class
     end
