@@ -37,17 +37,16 @@ THUMB_DIR="$HOME/.cache/wallpaper-thumbs"
 mkdir -p "$THUMB_DIR"
 
 options=""
-for img in "$WALLPAPER_DIR"/*.{jpg,jpeg,png,webp}; do
-  [ -f "$img" ] || continue
-  name=$(basename "$img")
-  thumb="$THUMB_DIR/$name.png"
+while IFS= read -r -d '' img; do
+  rel="${img#"$WALLPAPER_DIR"/}"
+  thumb="$THUMB_DIR/${rel//\//_}.png"
 
   if [ ! -f "$thumb" ]; then
     convert "$img" -thumbnail 300x200^ -gravity center -extent 300x200 "$thumb" 2>/dev/null
   fi
 
-  options+="$name\0icon\x1f$thumb\n"
-done
+  options+="$rel\0icon\x1f$thumb\n"
+done < <(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -print0 | sort -z)
 
 # chosen=$(echo -e "$options" | rofi -dmenu -i -p "Select Wallpaper" -theme ~/.config/rofi/launchers/type-1/style-10.rasi)
 chosen=$(printf "None\n%b" "$options" | rofi -dmenu -i -p "Select Wallpaper" \
