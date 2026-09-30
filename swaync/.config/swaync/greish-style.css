@@ -1,0 +1,237 @@
+/* Greish theme for SwayNC, matched to waybar/greish-style.css */
+:root {
+  --greish-bg: #1a1a1a; /* window#waybar */
+  --greish-bg-alt: #212121; /* notification surface */
+  --greish-bg-chip: #2a2a2a; /* #workspaces button */
+  --greish-bg-hover: #333333; /* #workspaces button:hover */
+  --greish-bg-darker: #1a1a1a; /* inline-reply field, scrollbar trough */
+  --greish-text-primary: rgba(228, 247, 225, 0.75); /* #clock, active workspace */
+  --greish-text-secondary: rgba(228, 247, 225, 0.60); /* #custom-music.playing */
+  --greish-text-disabled: rgba(228, 247, 225, 0.35); /* default module fg */
+  --greish-text-bright: #e4f7e1; /* text on --greish-accent */
+  --greish-accent: #3d5566; /* active workspace, tooltip border */
+  --greish-accent-alt: #3d5566;
+  --greish-border: rgba(61, 85, 102, 0.30); /* tooltip border */
+}
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 10pt;
+}
+
+/* Control Center */
+.control-center {
+  background: var(--greish-bg);
+  /* border: 1px solid var(--greish-border); */
+  border-top: none;
+  margin: 0;
+  padding: 8px;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.widget-title {
+  color: var(--greish-text-primary);
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  padding: 8px;
+  background: var(--greish-bg-alt);
+  border: 1px solid var(--greish-border);
+}
+
+.widget-title > button {
+  color: var(--greish-text-primary);
+  background: var(--greish-bg-chip);
+  padding: 4px 8px;
+}
+
+.widget-title > button:hover {
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
+}
+
+/* DND Widget */
+.widget-dnd {
+  background: var(--greish-bg-alt);
+  border: 1px solid var(--greish-border);
+  margin: 0 0 8px 0;
+  padding: 8px;
+}
+
+.widget-dnd > label {
+  color: var(--greish-text-primary);
+}
+
+.widget-dnd > switch {
+  background: var(--greish-bg-darker);
+  border: 1px solid var(--greish-border);
+  min-width: 40px;
+  min-height: 20px;
+}
+
+.widget-dnd > switch:checked {
+  background: var(--greish-accent-alt);
+}
+
+.widget-dnd > switch slider {
+  background: var(--greish-text-bright);
+}
+
+/* Inhibitors Widget */
+.widget-inhibitors {
+  background: var(--greish-bg-alt);
+  border: 1px solid var(--greish-border);
+  margin: 0 0 8px 0;
+  padding: 8px;
+}
+
+.widget-inhibitors > button {
+  color: var(--greish-text-primary);
+  background: var(--greish-bg-chip);
+  padding: 4px 8px;
+}
+
+.widget-inhibitors > button:hover {
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
+}
+
+/* Floating Notifications */
+/* GTK4 has no max-width: the window width comes from notification-window-width */
+.floating-notifications .notification {
+  background: var(--greish-bg-alt);
+  border: 1px solid var(--greish-border);
+  margin: 4px;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+}
+
+/* Notifications */
+.notification-row {
+  outline: none;
+  margin: 0 0 4px 0;
+  padding: 0;
+}
+
+.notification-row:hover {
+  background: var(--greish-bg-hover);
+}
+
+.notification {
+  background: var(--greish-bg-alt);
+  border: 1px solid var(--greish-border);
+  margin: 0;
+  padding: 0;
+}
+
+.notification:hover {
+  background: var(--greish-bg-hover);
+}
+
+.notification-content {
+  background: transparent;
+  padding: 8px;
+  margin: 0;
+}
+
+.notification-default-action {
+  margin: 0;
+  padding: 0;
+}
+
+/* Text Elements */
+.summary {
+  color: var(--greish-text-primary);
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.time {
+  color: var(--greish-text-disabled);
+  margin-left: 8px;
+}
+
+.body {
+  color: var(--greish-text-secondary);
+  margin-top: 2px;
+}
+
+.app-name {
+  color: var(--greish-text-disabled);
+}
+
+/* Icons and Images */
+/* all: unset above clears -gtk-icon-size, so it has to be set again */
+.notification-icon {
+  -gtk-icon-size: 24px;
+  margin-right: 8px;
+}
+
+.image {
+  -gtk-icon-size: 48px;
+  margin-right: 8px;
+}
+
+/* Close Button */
+.close-button {
+  background: var(--greish-bg-chip);
+  color: var(--greish-text-primary);
+  margin: 4px;
+  padding: 2px 6px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.close-button:hover {
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
+}
+
+/* Action Buttons */
+.notification-action {
+  background: var(--greish-bg-chip);
+  color: var(--greish-text-primary);
+  border: 1px solid var(--greish-border);
+  margin: 2px;
+  padding: 4px 8px;
+}
+
+.notification-action:hover {
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
+}
+
+/* Inline Reply */
+.inline-reply {
+  background: var(--greish-bg-darker);
+  color: var(--greish-text-primary);
+  border: 1px solid var(--greish-border);
+  padding: 4px;
+  margin: 2px;
+}
+
+.inline-reply:focus {
+  border-color: var(--greish-accent);
+}
+
+/* Scrollbar */
+.blank-window scrollbar {
+  background: transparent;
+}
+
+.blank-window scrollbar trough {
+  background: var(--greish-bg-darker);
+}
+
+.blank-window scrollbar slider {
+  background: var(--greish-border);
+  min-width: 8px;
+}
+
+.blank-window scrollbar slider:hover {
+  background: var(--greish-accent);
+}

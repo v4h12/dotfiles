@@ -21,7 +21,6 @@
   all: unset;
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 10pt;
-  box-sizing: border-box;
 }
 
 /* ── Control Center ─────────────────────────────────────────── */
@@ -47,7 +46,6 @@
   padding: 8px 10px;
   background: var(--bg-widget);
   border: 1px solid var(--border);
-  width: 100%;
 }
 
 .widget-title > button {
@@ -69,7 +67,6 @@
   border: 1px solid var(--border);
   margin: 0 0 6px 0;
   padding: 8px 10px;
-  width: 100%;
 }
 
 .widget-dnd > label {
@@ -102,7 +99,6 @@
   border: 1px solid var(--border);
   margin: 0 0 6px 0;
   padding: 8px 10px;
-  width: 100%;
 }
 
 .widget-inhibitors > button {
@@ -127,7 +123,6 @@
   padding: 0;
   box-shadow: var(--shadow);
   min-width: 280px;
-  max-width: 340px;
 }
 
 /* ── Notification Rows ───────────────────────────────────────── */
@@ -136,7 +131,6 @@
   outline: none;
   margin: 0 0 4px 0;
   padding: 0;
-  width: 100%;
 }
 
 .notification-row:hover {
@@ -148,7 +142,6 @@
   border: 1px solid var(--border);
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
 .notification:hover {

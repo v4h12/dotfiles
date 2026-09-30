@@ -1,22 +1,18 @@
-/* Waybar Style - Navy Bordered Theme */
-/* Global Styles */
 * {
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
     font-size: 11px;
     min-height: 0;
-    /* color: #b8b8d1; */
-    color: rgba(211, 192, 105, 0.85);
+    color: #b8b8d1;
+
 }
 
 /* Main Window */
 window#waybar {
-    /* background: rgba(22, 33, 62, 0.69); */
     background: #282C34;
     padding: 0 4px;
     margin: 8px;
-    /* border: 1px solid #ffffff; */
     box-shadow: none;
 }
 
@@ -38,7 +34,6 @@ window#waybar {
 
 #custom-special-workspace.occupied {
     padding: 0 5px;
-    /* color: #b8b8d1; */
     color: rgba(195, 64, 67, 0.80);
     font-size: 14px;
     letter-spacing: 2px;
@@ -51,7 +46,6 @@ window#waybar {
     margin-top: 0;
     margin-bottom: 2px;
     margin-left: 2px;
-    /* border: 1px solid #ffffff; */
     box-shadow: none;
     transition: all 0.3s ease-in-out;
 }
@@ -83,8 +77,6 @@ window#waybar {
 
 /* Hover Effect */
 #custom-launcher:hover, #workspaces:hover, .right-modules:hover {
-    background: rgba(255, 255, 255, 0.05);
-    margin-bottom: 3px;
 }
 
 /* Workspaces - Active button stands out */
@@ -98,20 +90,31 @@ window#waybar {
 
 #workspaces button.active {
     color: #b8b8d1;
-    /* background: #243552; */
-    /* border: 1px solid #ffffff; */
     box-shadow: none;
     font-weight: bold;
 }
 
-#workspaces button:hover {
-    background: #1f2a47;
+/* Music Module */
+#custom-music {
+    background: transparent;
+    padding: 0 6px;
+    margin: 0;
+    min-width: 8px;
+    color: rgba(228, 247, 225, 0.60);
+    transition: all 0.2s ease;
 }
 
-/* Window */
-#window {
-    color: #9b9bb3;
-    padding: 0 8px;
+#custom-music.playing {
+    color: rgba(228, 247, 225, 0.75);
+}
+
+#custom-music.paused {
+    color: rgba(228, 247, 225, 0.40);
+    font-style: italic;
+}
+
+#custom-music.stopped {
+    color: rgba(228, 247, 225, 0.25);
 }
 
 /* Module States - Text emphasis only */
@@ -138,9 +141,7 @@ window#waybar {
 
 /* Tooltip */
 tooltip {
-    /* background: #1a1a2e; */
-    background: rgba(22, 33, 62, 0.69);
-    /* border: 1px solid #2d2d4a; */
+    background: #282C34;
     border: none;
     box-shadow: none;
     color: #b8b8d1;
@@ -148,6 +149,5 @@ tooltip {
 }
 
 tooltip label {
-    /* color: #b8b8d1; */
-    color: rgba(211, 192, 105, 0.85);
+    color: #b8b8d1;
 }

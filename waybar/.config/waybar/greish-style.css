@@ -75,9 +75,9 @@ window#waybar {
 }
 
 /* Hover Effect */
-#custom-launcher:hover, #workspaces:hover, .right-modules:hover {
+#custom-launcher:hover, #workspaces:hover, #right-modules:hover {
   background: transparent;
-  box-shadow: transparent;
+  box-shadow: none;
 }
 
 /* Music Module */

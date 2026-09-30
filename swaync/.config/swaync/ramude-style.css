@@ -41,8 +41,6 @@
   padding: 8px;
   background: var(--kanagawa-bg-alt);
   border: 1px solid var(--kanagawa-border);
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .widget-title > button {
@@ -61,8 +59,6 @@
   border: 1px solid var(--kanagawa-border);
   margin: 0 0 8px 0;
   padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .widget-dnd > label {
@@ -90,8 +86,6 @@
   border: 1px solid var(--kanagawa-border);
   margin: 0 0 8px 0;
   padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .widget-inhibitors > button {
@@ -112,7 +106,6 @@
   padding: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   min-width: 280px;
-  max-width: 320px;
 }
 
 /* Notifications */
@@ -120,8 +113,6 @@
   outline: none;
   margin: 0 0 4px 0;
   padding: 0;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .notification-row:hover {
@@ -133,8 +124,6 @@
   border: 1px solid var(--kanagawa-border);
   margin: 0;
   padding: 0;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .notification:hover {
