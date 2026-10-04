@@ -79,7 +79,7 @@ hl.window_rule({
 -- floats
 hl.window_rule({
     name = "windowrule-6",
-    float = true,
+    float = false,
     size = "500 500",
     center = true,
     match = { class = "^(kitty)$" },

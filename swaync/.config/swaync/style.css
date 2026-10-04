@@ -1,16 +1,16 @@
-/* Light theme for SwayNC, based on light.rasi */
+/* Dark theme for SwayNC, based on waybar dark theme */
 :root {
-  --kanagawa-bg: #E2E3E5;
-  --kanagawa-bg-alt: #f3f4f6;
-  --kanagawa-bg-hover: #e5e7eb;
-  --kanagawa-bg-darker: #f9fafb;
-  --kanagawa-text-primary: #1f2937;
-  --kanagawa-text-secondary: #4b5563;
-  --kanagawa-text-disabled: #6b7280;
-  --kanagawa-accent: #6465F9;
-  --kanagawa-accent-alt: #d97706;
-  --kanagawa-accent-active: #9333ea;
-  --kanagawa-border: #9ca3af;
+  --kanagawa-bg: #000000;
+  --kanagawa-bg-alt: #000000;
+  --kanagawa-bg-hover: #000000;
+  --kanagawa-bg-darker: #000000;
+  --kanagawa-text-primary: #e5e5e0;
+  --kanagawa-text-secondary: #e5e5e0
+  --kanagawa-text-disabled: #808080;
+  --kanagawa-accent: #88ddff;
+  --kanagawa-accent-alt: #88ddff;
+  --kanagawa-accent-active: #ff8888;
+  --kanagawa-border: rgba(160, 160, 160, 0.2);
 }
 
 * {

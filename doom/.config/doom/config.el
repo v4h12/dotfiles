@@ -8,10 +8,10 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 
 ;;; Code:
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
-      doom-symbol-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
-      doom-serif-font (font-spec :family "JetBrainsMono Nerd Font" :size 13))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 12)
+      doom-symbol-font (font-spec :family "JetBrainsMono Nerd Font" :size 12)
+      doom-serif-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
 
 ;; THEME ----------------------------------------------------------------------- ;;
 
@@ -42,6 +42,9 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
+
+;; must check this
+;; (ido-mode 1)
 
 ;; ORG ------------------------------------------------------------------------- ;;
 
@@ -81,7 +84,7 @@
 (setq display-line-numbers-type 'relative)
 
 (defun kb/toggle-transparency ()
-  "Toggle between opaque and 85% transparent."
+  "Toggle between opaque and transparent."
   (interactive)
   (set-frame-parameter nil 'alpha-background
                        (if (eq (frame-parameter nil 'alpha-background) 100)

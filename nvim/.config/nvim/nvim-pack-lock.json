@@ -4,9 +4,17 @@
       "rev": "a0ac2db39c8bd4a2b6ca897f38c88770f90d9323",
       "src": "https://github.com/j-morano/buffer_manager.nvim"
     },
+    "bufferline.nvim": {
+      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
+      "src": "https://github.com/akinsho/bufferline.nvim"
+    },
     "fine-cmdline.nvim": {
       "rev": "6e646f4da6afe856e36f3d952489b723d1475638",
       "src": "https://github.com/VonHeikemen/fine-cmdline.nvim"
+    },
+    "gitsigns.nvim": {
+      "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "kanagawa.nvim": {
       "rev": "bb85e4bfc8d89b0e62c8fa53ccdd13d12e2f77b3",

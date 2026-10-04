@@ -1,17 +1,14 @@
 /* Greish theme for SwayNC, matched to waybar/greish-style.css */
 :root {
   --greish-bg: #1a1a1a; /* window#waybar */
-  --greish-bg-alt: #212121; /* notification surface */
+  --greish-bg-darker: #141414; /* inline-reply field, scrollbar trough */
   --greish-bg-chip: #2a2a2a; /* #workspaces button */
   --greish-bg-hover: #333333; /* #workspaces button:hover */
-  --greish-bg-darker: #1a1a1a; /* inline-reply field, scrollbar trough */
-  --greish-text-primary: rgba(228, 247, 225, 0.75); /* #clock, active workspace */
-  --greish-text-secondary: rgba(228, 247, 225, 0.60); /* #custom-music.playing */
-  --greish-text-disabled: rgba(228, 247, 225, 0.35); /* default module fg */
-  --greish-text-bright: #e4f7e1; /* text on --greish-accent */
-  --greish-accent: #3d5566; /* active workspace, tooltip border */
+  --greish-text: rgba(228, 247, 225, 0.35); /* waybar default */
+  --greish-text-bright: rgba(228, 247, 225, 0.75); /* #clock, active workspace */
+  --greish-accent: #3d5566;
   --greish-accent-alt: #3d5566;
-  --greish-border: rgba(61, 85, 102, 0.30); /* tooltip border */
+  --greish-border: rgba(61, 85, 102, 0.50); /* tooltip border, lifted for flat cards */
 }
 
 * {
@@ -34,16 +31,16 @@
 }
 
 .widget-title {
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   font-weight: bold;
   margin: 0 0 8px 0;
   padding: 8px;
-  background: var(--greish-bg-alt);
+  background: var(--greish-bg);
   border: 1px solid var(--greish-border);
 }
 
 .widget-title > button {
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   background: var(--greish-bg-chip);
   padding: 4px 8px;
 }
@@ -55,14 +52,14 @@
 
 /* DND Widget */
 .widget-dnd {
-  background: var(--greish-bg-alt);
+  background: var(--greish-bg);
   border: 1px solid var(--greish-border);
   margin: 0 0 8px 0;
   padding: 8px;
 }
 
 .widget-dnd > label {
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
 }
 
 .widget-dnd > switch {
@@ -82,14 +79,14 @@
 
 /* Inhibitors Widget */
 .widget-inhibitors {
-  background: var(--greish-bg-alt);
+  background: var(--greish-bg);
   border: 1px solid var(--greish-border);
   margin: 0 0 8px 0;
   padding: 8px;
 }
 
 .widget-inhibitors > button {
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   background: var(--greish-bg-chip);
   padding: 4px 8px;
 }
@@ -102,7 +99,7 @@
 /* Floating Notifications */
 /* GTK4 has no max-width: the window width comes from notification-window-width */
 .floating-notifications .notification {
-  background: var(--greish-bg-alt);
+  background: var(--greish-bg);
   border: 1px solid var(--greish-border);
   margin: 4px;
   padding: 0;
@@ -122,7 +119,7 @@
 }
 
 .notification {
-  background: var(--greish-bg-alt);
+  background: var(--greish-bg);
   border: 1px solid var(--greish-border);
   margin: 0;
   padding: 0;
@@ -145,23 +142,23 @@
 
 /* Text Elements */
 .summary {
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   font-weight: bold;
   margin-bottom: 2px;
 }
 
 .time {
-  color: var(--greish-text-disabled);
+  color: var(--greish-text);
   margin-left: 8px;
 }
 
 .body {
-  color: var(--greish-text-secondary);
+  color: var(--greish-text);
   margin-top: 2px;
 }
 
 .app-name {
-  color: var(--greish-text-disabled);
+  color: var(--greish-text);
 }
 
 /* Icons and Images */
@@ -179,7 +176,7 @@
 /* Close Button */
 .close-button {
   background: var(--greish-bg-chip);
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   margin: 4px;
   padding: 2px 6px;
   min-width: 16px;
@@ -194,7 +191,7 @@
 /* Action Buttons */
 .notification-action {
   background: var(--greish-bg-chip);
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   border: 1px solid var(--greish-border);
   margin: 2px;
   padding: 4px 8px;
@@ -208,7 +205,7 @@
 /* Inline Reply */
 .inline-reply {
   background: var(--greish-bg-darker);
-  color: var(--greish-text-primary);
+  color: var(--greish-text);
   border: 1px solid var(--greish-border);
   padding: 4px;
   margin: 2px;

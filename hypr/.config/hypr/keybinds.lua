@@ -19,9 +19,10 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- end)
 
 -- this creates a single instance of a kitty server, any terminals after this load fast
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("kitty -1"))
+-- hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("kitty -1", float = true))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty -1"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("kitty -e cliphist list -max-items 100 | fzf | cliphist decode | wl-copy"))
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("foot"))
+hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd("foot"))
 -- dropdown terminal (Super+`): spawn once, then toggle scratchpad
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("emacsclient -c -a 'emacs'"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -35,12 +36,11 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("./.librepods-x86_64.AppImage"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun || pkill rofi"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/rofi/wallpaper-switcher.sh"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
--- hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("kitty -e yazi"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("qutebrowser"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + ALT + P", hl.dsp.window.pin())
-hl.bind(mainMod .. " + ALT + V", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle-idle.sh"))
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("ie-r"))
 hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd("pkill ie-r"))
@@ -57,7 +57,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 
 -- toggle gaps
-hl.bind(mainMod .. " + ALT + T", function()
+hl.bind(mainMod .. " + SHIFT + F", function()
     local gaps = hl.get_config("general.gaps_out")
     if gaps.top == 0 then
         hl.config({ general = { gaps_in = 3, gaps_out = 6 } })
@@ -77,13 +77,19 @@ hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
 -- vim binds
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.swap({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.swap({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.swap({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "down" }))
+hl.bind(mainMod .. " + ALT + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + ALT + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(mainMod .. " + ALT + J", hl.dsp.window.swap({ direction = "down" }))
 
-hl.bind(mainMod .. " + ALT + H", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + ALT + L", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.focus({ workspace = "e+1" }))
+
+-- for i = h, l do
+--   local key = i % l
+--   hl.bind(mainMod .. " + " .. key,
+--           hl.dsp.focus({ workspace = "e+1" }))
+
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]

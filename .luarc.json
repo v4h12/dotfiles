@@ -1,0 +1,5 @@
+{
+    "workspace.library": ["/usr/share/hypr/stubs/"],
+    "runtime.version": "Lua 5.4",
+    "diagnostics.globals": ["hl"]
+}

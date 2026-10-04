@@ -6,26 +6,18 @@
   font-family: "JetBrainsMono Nerd Font", "Adwaita Sans", monospace;
   font-size: 11px;
   min-height: 0;
-  color: #e5e5e0; /* bone white as default */
+  /* color: #e5e5e0;  */
+  color: #AEB3AD; 
 }
 
 /* Main Window - Top-Sticking, Transparent with subtle border */
 window#waybar {
   /* background: linear-gradient(to bottom, rgba(8, 8, 8, 0.95), rgba(8, 8, 8, 0.8)); */
-  background: rgba(0, 0, 0, 1.0);
+  background: #000000; 
   padding: 0 4px;
   margin: 0;
   box-shadow: none;
 }
-
-/* Right side separators - add right border to specific modules */
-/* #custom-weather, */
-/* #idle_inhibitor, */
-/* #custom-redshift { */
-/*     border-right: 1px solid #808080; */
-/*     margin-right: 8px; */
-/*     padding-right: 8px; */
-/* } */
 
 #custom-special-workspace {
     padding: 0 5px;
@@ -60,7 +52,8 @@ window#waybar {
 }
 
 #custom-music.playing {
-    color: rgba(228, 247, 225, 1.0);
+    /* color: rgba(228, 247, 225, 1.0); */
+    color: #AEB3AD; 
 }
 
 #custom-music.paused {
@@ -128,6 +121,7 @@ window#waybar {
 #workspaces button.active {
   /* color: #ffffff; */
   background: #1f1f1f;
+  /* background: rgba(160, 160, 160, 0.8); */
   border: none;
   /* font-weight: bold; */
 }

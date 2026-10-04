@@ -42,12 +42,22 @@ map("n", "<C-j>", "<C-w>j", { desc = "Move to lower split" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to upper split" })
 
 -- buffers
--- map("n", "<leader>bl", "<cmd>bnext<cr>",     { desc = "Next buffer" })
--- map("n", "<leader>bh", "<cmd>bprev<cr>",     { desc = "Prev buffer" })
--- map("n", "<leader>bc", "<cmd>bdelete<cr>",   { desc = "Delete buffer" })
 map("n", "<leader>b", function()
   require("buffer_manager.ui").toggle_quick_menu()
 end, { desc = "Buffer manager" })
+
+-- bufferline
+-- map("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>",  { desc = "Toggle Pin" })
+-- map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", { desc = "Delete Non-Pinned Buffers" })
+-- map("n", "<leader>br", "<cmd>BufferLineCloseRight<cr>", { desc = "Delete Buffers to the Right" })
+-- map("n", "<leader>bl", "<cmd>BufferLineCloseLeft<cr>",  { desc = "Delete Buffers to the Left" })
+-- map("n", "<leader>bj", "<cmd>BufferLinePick<cr>",       { desc = "Pick Buffer" })
+-- map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>",      { desc = "Prev Buffer" })
+-- map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>",      { desc = "Next Buffer" })
+-- map("n", "[b", "<cmd>BufferLineCyclePrev<cr>",         { desc = "Prev Buffer" })
+-- map("n", "]b", "<cmd>BufferLineCycleNext<cr>",         { desc = "Next Buffer" })
+-- map("n", "[B", "<cmd>BufferLineMovePrev<cr>",          { desc = "Move buffer prev" })
+-- map("n", "]B", "<cmd>BufferLineMoveNext<cr>",          { desc = "Move buffer next" })
 
 -- LSP (these only work when LSP is attached to a file)
 map("n", "<leader>ca", vim.lsp.buf.code_action,  { desc = "Code action" })
@@ -87,8 +97,10 @@ vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/MunifTanjim/nui.nvim" },
   { src = "https://github.com/j-morano/buffer_manager.nvim"},
+  -- { src = "https://github.com/akinsho/bufferline.nvim"},
   { src = "https://github.com/nvim-tree/nvim-web-devicons"},
   { src = "https://github.com/nvim-neo-tree/neo-tree.nvim"},
+  { src = "https://github.com/lewis6991/gitsigns.nvim"},
 })
 
 -- Colorschemes
@@ -100,5 +112,7 @@ require("neo-tree").setup({})
 require("which-key").setup()
 require("nvim-autopairs").setup()
 require("buffer_manager").setup()
-require("evil_lualine")
+require('gitsigns').setup({})
+-- require("bufferline_config")
+require("statusline")
 
