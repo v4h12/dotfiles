@@ -32,36 +32,44 @@
    (base2      '("#757D6B" "#757D6B"    "white"        ))
    (base3      '("#6B7361" "#6B7361"    "brightwhite"  ))
    (base4      '("#5E6654" "#5E6654"    "brightblack"  ))   ; LINE NUMBERS
-   (base5      '("#4A5141" "#4A5141"    "brightblack"  ))   ; COMMENTS, muted headings (org L5/L7)
-   (base6      '("#3A4133" "#3A4133"    "brightblack"  ))
+   (base5      '("#4A5141" "#4A5141"    "brightblack"  ))   ; muted headings (org L5/L7, ellipsis)
+   (base6      '("#3A4133" "#3A4133"    "brightblack"  ))   ; COMMENTS
    (base7      '("#2C3227" "#2C3227"    "brightblack"  ))   ; dark grey -- org-document-title
    (base8      '("#1D2218" "#1D2218"    "black"        ))   ; darkest (spare)
 
    (grey       base4)                                        ; alias for base4
 
    ;; main palette -- DEEP tones so they contrast against the mid-tone sage bg
-   ;; (bright accents wash out; these sit ~2.7-3:1 vs bg, same zone as the dark greys)
-   (red        '("#6F2A35" "#6F2A35"    "red"          ))   ; errors, builtins, variables, TODO, org-level-3
-   (orange     '("#6F2A35" "#6F2A35"    "red"          ))   ; GOLD IS GONE -- this var exists only because doom's base
+   ;; (bright accents wash out; these sit ~2.7-3.4:1 vs bg, same zone as the dark greys)
+   ;; chroma boost 2026-10-06: same lightness zone as before, saturation pushed up.
+   ;;
+   ;; PREVIOUS PALETTE (pre-chroma-boost) -- restore these to revert:
+   ;;   red #6F2A35   green #3A4F22  teal #2A4844   yellow #524413
+   ;;   blue #2A4353  dark-blue #243847  magenta/violet #463A5A
+   ;;   cyan #234A45  dark-cyan #26433F  salmon #6F2A35  olive #3A4F22
+   ;;   comments = base5, doc-comments = (doom-lighten base5 0.25), org L1-L4 not bold
+
+   (red        '("#6C1A28" "#6C1A28"    "red"          ))   ; errors, builtins, variables, TODO, org-level-3
+   (orange     '("#6C1A28" "#6C1A28"    "red"          ))   ; GOLD IS GONE -- this var exists only because doom's base
                                                           ; faces (all-the-icons-dorange, vc-annotate) reference it.
                                                           ; Pointed at deep brick so no amber ever shows.
-   (green      '("#3A4F22" "#3A4F22"    "green"        ))   ; strings, success, DONE, org-level-1, project-root
-   (teal       '("#2A4844" "#2A4844"    "cyan"         ))   ; methods, operators, org-table, org-level-4
-   (yellow     '("#524413" "#524413"    "yellow"       ))   ; type names, warnings
-   (blue       '("#2A4353" "#2A4353"    "blue"         ))   ; functions, hover highlight, dirs, dates
-   (dark-blue  '("#243847" "#243847"    "blue"         ))   ; selection / marks
-   (magenta    '("#463A5A" "#463A5A"    "magenta"      ))   ; keywords (italic via override), tags
-   (violet     '("#463A5A" "#463A5A"    "magenta"      ))   ; org-level-2 headings
-   (cyan       '("#234A45" "#234A45"    "cyan"         ))   ; symlinks (rarely used)
-   (dark-cyan  '("#26433F" "#26433F"    "cyan"         ))   ; spare / barely used
+   (green      '("#27490F" "#27490F"    "green"        ))   ; strings, success, DONE, org-level-1, project-root
+   (teal       '("#0C443F" "#0C443F"    "cyan"         ))   ; methods, operators, org-table, org-level-4
+   (yellow     '("#54440A" "#54440A"    "yellow"       ))   ; type names, warnings
+   (blue       '("#17395C" "#17395C"    "blue"         ))   ; functions, hover highlight, dirs, dates
+   (dark-blue  '("#143157" "#143157"    "blue"         ))   ; selection / marks
+   (magenta    '("#571D63" "#571D63"    "magenta"      ))   ; keywords (italic via override), tags
+   (violet     '("#4E206F" "#4E206F"    "magenta"      ))   ; org-level-2 headings
+   (cyan       '("#0C443E" "#0C443E"    "cyan"         ))   ; symlinks (rarely used)
+   (dark-cyan  '("#0A3A36" "#0A3A36"    "cyan"         ))   ; spare / barely used
 
    ;; universal syntax classes -- semantic roles -> palette colors
    (highlight      blue)                                     ; hovered links, modeline accent bar, emphasis
    (vertical-bar   (doom-darken base1 0.1))                  ; vertical window splitter
    (selection      dark-blue)                                ; search matches, marks, isearch
    (builtin        red)                                      ; language built-ins
-   (comments       base5)                                    ; comments
-   (doc-comments   (doom-lighten base5 0.25))                ; docstrings / docs
+   (comments       base6)                                    ; comments
+   (doc-comments   (doom-lighten base6 0.35))                ; docstrings / docs
    (constants      red)                                      ; literal constants
    (functions      blue)                                     ; function names
    (keywords       magenta)                                  ; language keywords
@@ -80,8 +88,8 @@
    (vc-deleted     red)                                      ; git: deleted files
 
    ;; custom categories -- used only by the face overrides below
-   (salmon    '("#6F2A35" "#6F2A35" "red"   ))               ; spare (was the old org-document-title)
-   (olive     '("#3A4F22" "#3A4F22" "green" ))               ; org-code (inline code)
+   (salmon    '("#6C1A28" "#6C1A28" "red"   ))               ; spare (was the old org-document-title)
+   (olive     '("#27490F" "#27490F" "green" ))               ; org-code (inline code)
    (link      (doom-darken blue 0.2))                        ; hyperlinks (org-link) -- darker slate blue
    (modeline-fg     fg)                                      ; active  modeline text
    (modeline-fg-alt base5)                                   ; inactive modeline text
@@ -135,10 +143,10 @@
 
    ;;;; org <built-in>
    (org-document-title :foreground base7 :weight 'bold :height 1.5) ; doc title = dark grey, big + bold
-   (org-level-1 :foreground green)                           ; *      headings (deep olive)
-   (org-level-2 :foreground violet)                          ; **     headings (deep aubergine)
-   (org-level-3 :foreground red)                             ; ***    headings (deep brick)
-   (org-level-4 :foreground teal)                            ; ****   headings (deep pine -- gold is gone)
+   (org-level-1 :foreground green :weight 'bold)             ; *      headings (deep olive, bold)
+   (org-level-2 :foreground violet :weight 'bold)            ; **     headings (deep aubergine, bold)
+   (org-level-3 :foreground red :weight 'bold)               ; ***    headings (deep brick, bold)
+   (org-level-4 :foreground teal :weight 'bold)              ; ****   headings (deep pine -- gold is gone, bold)
    (org-level-5 :foreground base5)                           ; deeper headings -> muted grey
    (org-level-6 :foreground fg)
    (org-level-7 :foreground base5)

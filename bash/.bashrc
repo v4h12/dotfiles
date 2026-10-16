@@ -4,11 +4,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.bun/bin:$PATH"
+# set to: kitty (kitty/wezterm), sixel (foot/xterm), or symbols (tmux/any terminal)
+export FZF_PREVIEW_IMAGE_HANDLER="${FZF_PREVIEW_IMAGE_HANDLER:-symbols}"
 
 # ----- coloring and shortcuts for programs ----- #
 
 PS1='\[\e[97m\]\u@\h \w\n\$ \[\e[0m\]'
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 
 # -------------------- #
 
@@ -24,12 +29,12 @@ alias hypr='start-hyprland'
 alias neofetch="fastfetch"
 alias matrix="unimatrix -n -s 96 -l 'o'"
 alias print='lp -d Canon_TS5100_series'
-alias hy='cd ~/.config/hypr && ls -la'
 alias em="emacsclient -t -c -a 'emacs'"
 alias semacs="/usr/bin/emacs --daemon --init-directory /home/v4h/.config/emacs"
 alias eorg="for f in *.md; do pandoc "$f" -o "${f%.md}.org"; done"
 alias za='zathura'
 alias usb='cd /run/media/v4h'
+alias airtui="~/Coding/projects/librepods-tui/librepods-tui/linux-rust/target/release/librepods"
 alias upd="xdg-open https://archlinux.org/news && sudo pacman -Syu"
 alias st="/home/v4h/OCR4Linux/OCR4Linux.sh"
 alias godot="cd Coding/packages/godot && ./Godot_v4.6.1-stable_linux.x86_64"
@@ -39,7 +44,7 @@ alias venv="source venv/bin/activate"
 
 # tty specific
 alias pavutty='pulsemixer' # for audio config
-alias btctl='bluetoothctl' # bluetooth config
+alias btctl='bluetoothctl' # bluetooth config / or use 'bluetui'
 alias mpvtty='mpv --profile=drm --drm-device=/dev/dri/card1'
 alias battery='cat /sys/class/power_supply/BAT0/capacity && cat /sys/class/power_supply/BAT0/status'
 

@@ -1,16 +1,14 @@
-/* Dark theme for SwayNC, based on waybar dark theme */
+/* Greish theme for SwayNC, matched to waybar/greish-style.css */
 :root {
-  --kanagawa-bg: #000000;
-  --kanagawa-bg-alt: #000000;
-  --kanagawa-bg-hover: #000000;
-  --kanagawa-bg-darker: #000000;
-  --kanagawa-text-primary: #e5e5e0;
-  --kanagawa-text-secondary: #e5e5e0
-  --kanagawa-text-disabled: #808080;
-  --kanagawa-accent: #88ddff;
-  --kanagawa-accent-alt: #88ddff;
-  --kanagawa-accent-active: #ff8888;
-  --kanagawa-border: rgba(160, 160, 160, 0.2);
+  --greish-bg: #1a1a1a; /* window#waybar */
+  --greish-bg-darker: #141414; /* inline-reply field, scrollbar trough */
+  --greish-bg-chip: #2a2a2a; /* #workspaces button */
+  --greish-bg-hover: #333333; /* #workspaces button:hover */
+  --greish-text: rgba(228, 247, 225, 0.35); /* waybar default */
+  --greish-text-bright: rgba(228, 247, 225, 0.75); /* #clock, active workspace */
+  --greish-accent: #3d5566;
+  --greish-accent-alt: #3d5566;
+  --greish-border: rgba(61, 85, 102, 0.50); /* tooltip border, lifted for flat cards */
 }
 
 * {
@@ -21,8 +19,8 @@
 
 /* Control Center */
 .control-center {
-  background: var(--kanagawa-bg);
-  /* border: 2px solid var(--kanagawa-border); */
+  background: var(--greish-bg);
+  /* border: 1px solid var(--greish-border); */
   border-top: none;
   margin: 0;
   padding: 8px;
@@ -33,73 +31,76 @@
 }
 
 .widget-title {
-  color: var(--kanagawa-text-primary);
+  color: var(--greish-text);
   font-weight: bold;
   margin: 0 0 8px 0;
   padding: 8px;
-  background: var(--kanagawa-bg-alt);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg);
+  border: 1px solid var(--greish-border);
 }
 
 .widget-title > button {
-  color: var(--kanagawa-text-primary);
-  background: var(--kanagawa-bg-hover);
+  color: var(--greish-text);
+  background: var(--greish-bg-chip);
   padding: 4px 8px;
 }
 
 .widget-title > button:hover {
-  background: var(--kanagawa-accent);
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
 }
 
 /* DND Widget */
 .widget-dnd {
-  background: var(--kanagawa-bg-alt);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg);
+  border: 1px solid var(--greish-border);
   margin: 0 0 8px 0;
   padding: 8px;
 }
 
 .widget-dnd > label {
-  color: var(--kanagawa-text-primary);
+  color: var(--greish-text);
 }
 
 .widget-dnd > switch {
-  background: var(--kanagawa-bg-darker);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg-darker);
+  border: 1px solid var(--greish-border);
   min-width: 40px;
   min-height: 20px;
 }
 
 .widget-dnd > switch:checked {
-  background: var(--kanagawa-accent-alt);
+  background: var(--greish-accent-alt);
 }
 
 .widget-dnd > switch slider {
-  background: var(--kanagawa-text-primary);
+  background: var(--greish-text-bright);
 }
 
 /* Inhibitors Widget */
 .widget-inhibitors {
-  background: var(--kanagawa-bg-alt);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg);
+  border: 1px solid var(--greish-border);
   margin: 0 0 8px 0;
   padding: 8px;
 }
 
 .widget-inhibitors > button {
-  color: var(--kanagawa-text-primary);
-  background: var(--kanagawa-bg-hover);
+  color: var(--greish-text);
+  background: var(--greish-bg-chip);
   padding: 4px 8px;
 }
 
 .widget-inhibitors > button:hover {
-  background: var(--kanagawa-accent);
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
 }
 
 /* Floating Notifications */
+/* GTK4 has no max-width: the window width comes from notification-window-width */
 .floating-notifications .notification {
-  background: var(--kanagawa-bg-alt);
-  border: 2px solid var(--kanagawa-border);
+  background: var(--greish-bg);
+  border: 1px solid var(--greish-border);
   margin: 4px;
   padding: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -114,18 +115,18 @@
 }
 
 .notification-row:hover {
-  background: var(--kanagawa-bg-hover);
+  background: var(--greish-bg-hover);
 }
 
 .notification {
-  background: var(--kanagawa-bg-alt);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg);
+  border: 1px solid var(--greish-border);
   margin: 0;
   padding: 0;
 }
 
 .notification:hover {
-  background: var(--kanagawa-bg-hover);
+  background: var(--greish-bg-hover);
 }
 
 .notification-content {
@@ -141,38 +142,41 @@
 
 /* Text Elements */
 .summary {
-  color: var(--kanagawa-text-primary);
+  color: var(--greish-text);
   font-weight: bold;
   margin-bottom: 2px;
 }
 
 .time {
-  color: var(--kanagawa-text-disabled);
+  color: var(--greish-text);
   margin-left: 8px;
 }
 
 .body {
-  color: var(--kanagawa-text-secondary);
+  color: var(--greish-text);
   margin-top: 2px;
 }
 
 .app-name {
-  color: var(--kanagawa-text-disabled);
+  color: var(--greish-text);
 }
 
 /* Icons and Images */
+/* all: unset above clears -gtk-icon-size, so it has to be set again */
 .notification-icon {
+  -gtk-icon-size: 24px;
   margin-right: 8px;
 }
 
 .image {
+  -gtk-icon-size: 48px;
   margin-right: 8px;
 }
 
 /* Close Button */
 .close-button {
-  background: var(--kanagawa-bg-hover);
-  color: var(--kanagawa-text-primary);
+  background: var(--greish-bg-chip);
+  color: var(--greish-text);
   margin: 4px;
   padding: 2px 6px;
   min-width: 16px;
@@ -180,35 +184,35 @@
 }
 
 .close-button:hover {
-  background: var(--kanagawa-accent);
-  color: var(--kanagawa-bg);
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
 }
 
 /* Action Buttons */
 .notification-action {
-  background: var(--kanagawa-bg-hover);
-  color: var(--kanagawa-text-primary);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg-chip);
+  color: var(--greish-text);
+  border: 1px solid var(--greish-border);
   margin: 2px;
   padding: 4px 8px;
 }
 
 .notification-action:hover {
-  background: var(--kanagawa-accent);
-  color: var(--kanagawa-bg);
+  background: var(--greish-accent);
+  color: var(--greish-text-bright);
 }
 
 /* Inline Reply */
 .inline-reply {
-  background: var(--kanagawa-bg-darker);
-  color: var(--kanagawa-text-primary);
-  border: 1px solid var(--kanagawa-border);
+  background: var(--greish-bg-darker);
+  color: var(--greish-text);
+  border: 1px solid var(--greish-border);
   padding: 4px;
   margin: 2px;
 }
 
 .inline-reply:focus {
-  border-color: var(--kanagawa-accent);
+  border-color: var(--greish-accent);
 }
 
 /* Scrollbar */
@@ -217,14 +221,14 @@
 }
 
 .blank-window scrollbar trough {
-  background: var(--kanagawa-bg-darker);
+  background: var(--greish-bg-darker);
 }
 
 .blank-window scrollbar slider {
-  background: var(--kanagawa-border);
+  background: var(--greish-border);
   min-width: 8px;
 }
 
 .blank-window scrollbar slider:hover {
-  background: var(--kanagawa-accent);
+  background: var(--greish-accent);
 }

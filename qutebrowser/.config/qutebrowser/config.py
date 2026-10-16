@@ -110,6 +110,7 @@ c.auto_save.session = True  # save tabs on quit/restart
 # Keybindings
 config.bind("J", "tab-prev")
 config.bind("K", "tab-next")
+config.bind("eo", "edit-url")
 config.bind(",m", 'spawn --detach mpv {url}')
 config.bind(",n", 'spawn --detach mpv --no-video {url}')
 config.bind("=", "cmd-set-text -s :open")
@@ -130,6 +131,20 @@ config.bind("gJ", "tab-move +")
 config.bind("gK", "tab-move -")
 config.bind("gm", "tab-move")
 config.bind("Y", "yank selection")
+
+# use yazi as file picker
+config.set("fileselect.handler", "external")
+config.set(
+    "fileselect.single_file.command",
+    [
+        "kitty",
+        "--title=yazi",
+        "-e",
+        "yazi",
+        "--chooser-file",
+        "{}",
+    ],
+)
 
 # Dark mode for websites
 c.colors.webpage.darkmode.enabled = True

@@ -80,5 +80,5 @@ map <C-h> scroll left
 map <C-l> scroll right
 
 # Colors (dark theme example)
-set default-bg "#1e1e1e"
+set default-bg "#141413"
 set default-fg "#f8f8f2"

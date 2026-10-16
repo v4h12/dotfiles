@@ -13,10 +13,10 @@ hl.config({
       border_size = 2,  -- 1
 
       col = {
-
         active_border = "#3D5566",
         -- active_border = "#696969",
         -- inactive_border = "#1e1e1e",
+        inactive_border = "#141413",
       },
 
       resize_on_border = true,
@@ -50,7 +50,7 @@ hl.config({
 
 })
 
--- Curves
+-- curves
 hl.curve("instant", {
     type = "bezier",
     points = {

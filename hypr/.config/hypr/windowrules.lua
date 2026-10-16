@@ -220,14 +220,19 @@ hl.window_rule({
     dim_around = 0,
     match = { class = "^(com.github.johnfactotum.Foliate)$" },
 })
--- hl.window_rule({ name = "foliate-blur", blur = true, match = { class = "^(com.github.johnfactotum.Foliate)$" } })
 
--- dropdown terminal (Super+`): top-anchored scratchpad
+-- a floating kitty
 hl.window_rule({
-    name = "dropdown-term",
-    workspace = "special:dropdown silent",
+    name = "float-term",
     float = true,
-    size = "90% 55%",
-    move = "5% 0",
-    match = { class = "^(kitty-dropdown)$" },
+    center = true,
+    size = "500 500",
+    match = { class = "^(kitty-float)$" },
+})
+
+-- transparency while a window sits in special workspace (magic)
+hl.window_rule({
+    name = "special-opacity",
+    opacity = "0.9 override 0.7 override",
+    match = { workspace = "special:magic" },
 })
