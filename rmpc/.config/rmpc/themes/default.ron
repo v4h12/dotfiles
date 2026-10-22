@@ -1,0 +1,50 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+    draw_borders: true,
+    lyrics: (
+        timestamp: true,
+    ),
+    song_table_format: [
+        (
+            prop: (kind: Property(Artist)),
+            width: "25%",
+            label: "Artist",
+        ),
+        (
+            prop: (kind: Property(Album)),
+            width: "25%",
+            label: "Album",
+        ),
+        (
+            prop: (kind: Property(Title)),
+            width: "50%",
+            label: "Title",
+        ),
+    ],
+
+background_color: None,
+    borders_style: (fg: "#D8CBAB", bg: None, modifiers: None),
+    highlight_border_style: (fg: "#1a1a1a", bg: None, modifiers: Some("Bold")),
+    highlighted_item_style: (fg: "#D8cbab", bg: None, modifiers: Some("Bold")),
+    current_item_style: (fg: "#2e2e2e", bg: "#D8CBAB", modifiers: Some("Bold")),
+    tab_bar: (
+        enabled: true,
+        active_style: (fg: "#1a1a1a", bg: None, modifiers: Some("Bold")),
+        inactive_style: (fg: "#6c6c6c", bg: None, modifiers: None),
+    ),
+    progress_bar: (
+        symbols: ["─", "─", "─"],
+        track_style: (fg: "#2e2e2e", bg: None, modifiers: None),
+        elapsed_style: (fg: "#D8CBAB", bg: None, modifiers: None),
+        thumb_style: (fg: "#D8CBAB", bg: None, modifiers: Some("Bold")),
+    ),
+    scrollbar: (
+        symbols: ["│", "█", "▲", "▼"],
+        track_style: (fg: "#2e2e2e", bg: None, modifiers: None),
+        ends_style: (fg: "#2e2e2e", bg: None, modifiers: None),
+        thumb_style: (fg: "#D8CBAB", bg: None, modifiers: None),
+    ),
+) 
+

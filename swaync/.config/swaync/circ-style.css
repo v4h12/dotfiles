@@ -1,17 +1,16 @@
-/* Circ theme for SwayNC, based on circ.rasi */
+/* Circ theme for SwayNC, matching waybar circ-style.css */
 :root {
-  /* --kanagawa-bg: #0e1415; */
-  --kanagawa-bg: rgba(00, 00, 00, 0.0);
-  --kanagawa-bg-alt: #1a2121;
-  --kanagawa-bg-hover: #252b2c;
-  --kanagawa-bg-darker: #161d1d;
+  --kanagawa-bg: #171715;
+  --kanagawa-bg-alt: #221A14;
+  --kanagawa-bg-hover: #2C231A;
+  --kanagawa-bg-darker: #14110D;
   --kanagawa-text-primary: #d4a574;
-  --kanagawa-text-secondary: #6b5844;
-  --kanagawa-text-disabled: #6b5844;
+  --kanagawa-text-secondary: #C9A67A;
+  --kanagawa-text-disabled: #705847;
   --kanagawa-accent: #f5d9a8;
   --kanagawa-accent-alt: #ffcc77;
   --kanagawa-accent-active: #88ccff;
-  --kanagawa-border: #25180c;
+  --kanagawa-border: rgba(180, 120, 70, 0.3);
 }
 
 * {

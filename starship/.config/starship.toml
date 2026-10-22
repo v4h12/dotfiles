@@ -3,7 +3,7 @@ scan_timeout = 500
 
 format = """
 [┌──\\(](bold white)$username[@](grey)$hostname[\\)-\\[](bold white)$directory[\\]](bold white)$git_branch$git_status$python
-└─$character"""
+[└─](bold white)$character"""
 
 [character]
 success_symbol = "[\\$](blue)"

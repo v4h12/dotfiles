@@ -1,12 +1,12 @@
-/* Grey Transparent theme for SwayNC, based on grey-transparent.rasi */
+/* Grey theme for SwayNC, matching waybar grey-style.css */
 :root {
   --kanagawa-bg: #848c7a;
   --kanagawa-bg-alt: #848c7a;
   --kanagawa-bg-hover: #595e4e;
-  --kanagawa-bg-darker: #3b3b3b;
+  --kanagawa-bg-darker: #595e4e;
   --kanagawa-text-primary: #262924;
-  --kanagawa-text-secondary: #cccccc;
-  --kanagawa-text-disabled: #aaaaaa;
+  --kanagawa-text-secondary: #3a3f39;
+  --kanagawa-text-disabled: #595E4E;
   --kanagawa-accent: #262924;
   --kanagawa-accent-alt: #E5A700;
   --kanagawa-accent-active: #0077A3;

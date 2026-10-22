@@ -1,0 +1,111 @@
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+
+(
+    address: "127.0.0.1:6600",
+    music_directory: "~/Music",
+    lyrics_dir: "~/Music/misc",
+    password: None,
+    theme: "default",
+    enable_config_hot_reload: true,
+    enable_lyrics_hot_reload: true,
+    cache_dir: None,
+    on_song_change: None,
+    volume_step: 5,
+    max_fps: 30,
+    scrolloff: 0,
+    wrap_navigation: false,
+    enable_mouse: true,
+    status_update_interval_ms: 1000,
+    select_current_song_on_change: false,
+
+    album_art: (
+        enabled: true,
+        // method: Auto,
+        method: Kitty,
+        max_size_px: (width: 700, height: 700),
+        disabled_protocols: ["http://", "https://"],
+        vertical_align: Center,
+        horizontal_align: Center,
+    ),
+
+    search: (
+        case_sensitive: false,
+        mode: Contains,
+        tags: [
+            (value: "any",    label: "Any Tag"),
+            (value: "title",  label: "Title"),
+            (value: "album",  label: "Album"),
+            (value: "artist", label: "Artist"),
+            (value: "filename", label: "Filename"),
+            (value: "genre",  label: "Genre"),
+        ],
+    ),
+
+    artists: (
+        album_display_mode: SplitByDate,
+        album_sort_by: Date,
+    ),
+    tabs: [
+        (
+            name: "Playing",
+            pane: Split(
+                direction: Horizontal,
+                panes: [
+                    (size: "65%", pane: Pane(Queue)),
+                    (size: "35%", pane: Pane(AlbumArt)),
+                ],
+            ),
+        ),
+        (
+            name: "Lyrics",
+            pane: Split(
+                direction: Horizontal,
+                panes: [
+                    (size: "50%", pane: Pane(Lyrics), borders: "ALL"),
+                    (size: "50%", pane: Pane(AlbumArt), borders: "ALL"),
+                ],
+        
+            ),
+        ),
+        (
+            name: "Directories",
+            pane: Pane(Directories),
+        ),
+        (
+            name: "Artists",
+            pane: Pane(Artists),
+        ),
+        (
+            name: "Album Artists",
+            pane: Pane(AlbumArtists),
+        ),
+        (
+            name: "Albums",
+            pane: Pane(Albums),
+        ),
+        (
+            name: "Playlists",
+            pane: Pane(Playlists),
+        ),
+        (
+            name: "Search",
+            pane: Pane(Search),
+        ),
+    ],
+
+    keybinds: (
+        global: {
+            "1": SwitchToTab("Playing"),
+            "2": SwitchToTab("Lyrics"),
+            "3": SwitchToTab("Directories"),
+            "4": SwitchToTab("Artists"),
+            "5": SwitchToTab("Album Artists"),
+            "6": SwitchToTab("Albums"),
+            "7": SwitchToTab("Playlists"),
+            "8": SwitchToTab("Search"),
+            "9": SwitchToTab("Search"),
+        },
+    ),
+)

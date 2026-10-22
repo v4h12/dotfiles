@@ -10,15 +10,16 @@ hl.config({
     general = {
       gaps_in = 0,      -- 3
       gaps_out = 0,     -- 6
-      border_size = 2,  -- 1
+      border_size = 2,  -- 1 or 2
 
       col = {
-        active_border = "#3D5566",
+        active_border = "#3D5566", -- this one here
         -- active_border = "#696969",
         -- inactive_border = "#1e1e1e",
-        inactive_border = "#141413",
+        inactive_border = "#141413", -- also this one here
       },
 
+      hover_icon_on_border = true,
       resize_on_border = true,
       allow_tearing = false,
       layout = "dwindle",

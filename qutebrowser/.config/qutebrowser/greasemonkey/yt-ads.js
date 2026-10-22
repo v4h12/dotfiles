@@ -31,32 +31,32 @@
 //improved version
 
 // Fast ad manipulation
-setInterval(() => {
-    const video = document.querySelector('video');
-    if (video && document.querySelector('.ad-showing')) {
-        video.playbackRate = 16;
-        video.muted = true;
-        if (video.duration) {
-            video.currentTime = video.duration;
-        }
-    }
-}, 100);
+// setInterval(() => {
+//     const video = document.querySelector('video');
+//     if (video && document.querySelector('.ad-showing')) {
+//         video.playbackRate = 16;
+//         video.muted = true;
+//         if (video.duration) {
+//             video.currentTime = video.duration;
+//         }
+//     }
+// }, 100);
 
-// Watch for skip button appearing
-const observer = new MutationObserver(() => {
-    const skipButton = document.querySelector('.ytp-ad-skip-button, .ytp-ad-skip-button-modern, .ytp-skip-ad-button');
-    if (skipButton) {
-        skipButton.click();
-    }
-});
+// // Watch for skip button appearing
+// const observer = new MutationObserver(() => {
+//     const skipButton = document.querySelector('.ytp-ad-skip-button, .ytp-ad-skip-button-modern, .ytp-skip-ad-button');
+//     if (skipButton) {
+//         skipButton.click();
+//     }
+// });
 
-// Observe the video player for changes
-const playerContainer = document.querySelector('.html5-video-player');
-if (playerContainer) {
-    observer.observe(playerContainer, { 
-        childList: true, 
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['class']
-    });
-}
+// // Observe the video player for changes
+// const playerContainer = document.querySelector('.html5-video-player');
+// if (playerContainer) {
+//     observer.observe(playerContainer, {
+//         childList: true,
+//         subtree: true,
+//         attributes: true,
+//         attributeFilter: ['class']
+//     });
+// }

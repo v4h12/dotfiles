@@ -43,7 +43,7 @@ alias ytp="mpv --no-video"
 alias venv="source venv/bin/activate"
 
 # tty specific
-alias pavutty='pulsemixer' # for audio config
+alias mpp='pulsemixer' # for audio config
 alias btctl='bluetoothctl' # bluetooth config / or use 'bluetui'
 alias mpvtty='mpv --profile=drm --drm-device=/dev/dri/card1'
 alias battery='cat /sys/class/power_supply/BAT0/capacity && cat /sys/class/power_supply/BAT0/status'

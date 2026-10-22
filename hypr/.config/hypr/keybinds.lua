@@ -10,6 +10,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- General Keybinds
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty -1"))
 hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd("kitty -1 --class kitty-float"))
+hl.bind(mainMod .. " + ALT + Return", hl.dsp.exec_cmd("~/.config/rofi/lmux.sh"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("qutebrowser"))
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("foot"))
@@ -38,6 +39,10 @@ hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/.config/hypr/scripts/s
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + Escape", hl.dsp.exit())
+
+-- screenshot to text tool
+local OCR4Linux = "~/.config/OCR4Linux/OCR4Linux.sh"
+hl.bind(mainMod .. " + ALT + Print", hl.dsp.exec_cmd(OCR4Linux .. " --lang eng && notify-send 'OCR' 'Activated'"))
 
 -- mpc (music)
 hl.bind(mainMod .. " + ALT + up", hl.dsp.exec_cmd("mpc toggle"))
@@ -69,10 +74,6 @@ hl.bind(mainMod .. " + ALT+ F", function()
         hl.config({ general = { gaps_in = 0, gaps_out = 0 } })
     end
 end)
-
--- screenshot to text tool
-local OCR4Linux = "~/.config/OCR4Linux/OCR4Linux.sh"
-hl.bind(mainMod .. " + ALT + Print", hl.dsp.exec_cmd(OCR4Linux .. " --lang eng && notify-send 'OCR' 'Activated'"))
 
 -- Move focus with mainMod + vim keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -119,6 +120,7 @@ hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.resize({ x = 0,   y = 40, r
 hl.bind(mainMod .. " + SHIFT + space",  hl.dsp.window.resize({ x = 75,   y = 40, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + ALT + space",  hl.dsp.window.resize({ x = -75,   y = -40, relative = true }), { repeating = true })
 
+
 -- Toggle the active workspace between the tiled 3-pane layout and dwindle
 hl.bind(mainMod .. " + SHIFT + ALT + F", function()
     local ws = hl.get_active_workspace()
@@ -142,6 +144,33 @@ hl.bind(mainMod .. " + SHIFT + ALT + F", function()
     end
 
     hl.workspace_rule({ workspace = tostring(ws.id), layout = "lua:threepane" })
+end)
+
+
+-- Snap/toggle focused window to pseudo geometry (1058x738, centered)
+local SNAP_W, SNAP_H = 1058, 738
+
+hl.bind(mainMod .. " + SHIFT + P", function()
+    local w = hl.get_active_window()
+    if not w then return end
+
+    local sel = "address:" .. w.address
+    local s = w.size
+    local snapped = w.fullscreen == 0 and not w.floating
+        and math.abs(s.x - SNAP_W) <= 2 and math.abs(s.y - SNAP_H) <= 2
+
+    if snapped then
+        hl.dispatch(hl.dsp.window.pseudo({ action = "disable", window = sel }))
+        return
+    end
+
+    hl.dispatch(hl.dsp.window.fullscreen({ action = "unset", window = sel }))
+    if w.floating then
+        hl.dispatch(hl.dsp.window.float({ action = "disable", window = sel }))
+    end
+
+    hl.dispatch(hl.dsp.window.pseudo({ action = "enable", window = sel }))
+    hl.dispatch(hl.dsp.window.resize({ x = SNAP_W, y = SNAP_H, window = sel }))
 end)
 
 -- Scrolling layout to dwindle toggle
